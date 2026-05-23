@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bespoke Tailoring & Styling | Deseos Fabrics Mumbai</title>
+  <meta name="description" content="Deseos Fabrics bespoke tailoring and styling consultations. Custom stitched outfits, unstitched sets, styling guidance. Mumbai-based, worldwide delivery."/>
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --magenta: #e0187a; --magenta-light: #f0429a; --magenta-pale: #fce8f3;
+      --royal: #1a3a9e; --royal-light: #2d52c4;
+      --cream: #f5f0eb; --cream-dark: #ede6de;
+      --dark: #1a1410; --mid: #5a4a3a; --white: #fffdf9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(255,253,249,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(224,24,122,0.12);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 48px; width: 48px; border-radius: 50%; object-fit: cover; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--magenta); }
+    .nav-back { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--mid); text-decoration: none; }
+    .nav-back:hover { color: var(--magenta); }
+    .nav-cta { background: var(--magenta); color: white !important; padding: 10px 22px; border-radius: 2px; font-weight: 600 !important; text-decoration: none; font-size: 13px; letter-spacing: 0.08em; }
+
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--magenta); color: white; padding: 16px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(224,24,122,0.3); }
+    .btn-primary:hover { background: var(--magenta-light); transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--royal); padding: 16px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--royal); border-radius: 2px; transition: all 0.3s; }
+    .btn-secondary:hover { background: var(--royal); color: white; }
+
+    /* HERO */
+    .bespoke-hero {
+      min-height: 65vh; background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 130px 80px 80px;
+      position: relative; overflow: hidden;
+    }
+    .bespoke-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 80% 20%, rgba(224,24,122,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(26,58,158,0.08) 0%, transparent 50%);
+    }
+    .bespoke-hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .section-eyebrow { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--magenta); margin-bottom: 16px; display: block; }
+    .bespoke-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 68px); font-weight: 900; color: var(--dark); line-height: 1.1; margin-bottom: 24px; }
+    .bespoke-hero h1 em { font-style: italic; color: var(--magenta); }
+    .bespoke-hero p { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--mid); line-height: 1.7; margin-bottom: 40px; text-align: center; }
+
+    /* SERVICES */
+    .services-section { padding: 100px 80px; background: var(--white); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 700; line-height: 1.15; color: var(--dark); margin-bottom: 20px; }
+    .section-title em { font-style: italic; color: var(--magenta); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
+    .service-card { background: var(--cream); border-radius: 8px; padding: 48px 32px; text-align: center; border-top: 4px solid var(--magenta); transition: all 0.3s; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(224,24,122,0.1); }
+    .service-icon { font-size: 48px; margin-bottom: 24px; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .service-card p { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--mid); line-height: 1.7; text-align: justify; hyphens: auto; }
+
+    /* HOW IT WORKS */
+    .process-section { padding: 100px 80px; background: var(--royal); text-align: center; }
+    .process-section .section-title { color: white; }
+    .process-section .section-eyebrow { color: var(--magenta-light); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; }
+    .process-step { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 40px 24px; }
+    .process-num { width: 52px; height: 52px; background: var(--magenta); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; }
+    .process-step h4 { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: white; margin-bottom: 12px; }
+    .process-step p { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* CTA */
+    .cta-section { padding: 100px 80px; background: var(--cream); text-align: center; }
+    .cta-box { background: white; border-radius: 12px; padding: 60px; max-width: 700px; margin: 0 auto; box-shadow: 0 8px 32px rgba(26,58,158,0.08); }
+    .cta-box h3 { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; color: var(--dark); margin-bottom: 16px; }
+    .cta-box p { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--mid); line-height: 1.7; margin-bottom: 32px; text-align: center; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 40px 80px; }
+    footer img { height: 60px; width: 60px; border-radius: 50%; object-fit: cover; opacity: 0.85; margin-bottom: 16px; }
+    footer p { font-size: 12px; letter-spacing: 0.08em; line-height: 1.8; }
+    footer a { color: var(--magenta-light); text-decoration: none; }
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin: 16px 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: var(--magenta-light); }
+
+    @media (max-width: 900px) {
+      nav { padding: 12px 20px; }
+      .bespoke-hero { padding: 100px 20px 60px; }
+      .services-section, .process-section, .cta-section { padding: 60px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-box { padding: 40px 24px; }
+      footer { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Deseos Fabrics" />
+    <span class="nav-brand-name">Deseos</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back To Main Site</a>
+  <a href="https://wa.me/917400031405" class="nav-cta">💬 WhatsApp Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="bespoke-hero">
+  <div class="bespoke-hero-content">
+    <span class="section-eyebrow">Bespoke & Tailoring</span>
+    <h1>Your Vision. Our <em>Craft.</em></h1>
+    <p>From a single custom outfit to a full wardrobe — we bring your fabric dreams to life with precision tailoring, personal styling consultations and complete outfit builds.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/917400031405?text=Hi%2C%20I%27m%20interested%20in%20your%20bespoke%20tailoring%20services.%20Can%20you%20share%20more%20details%3F" class="btn-primary">💬 Start Your Consultation</a>
+      <a href="https://instagram.com/deseosfabrics" class="btn-secondary">📸 See Our Work</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div style="text-align:center;max-width:600px;margin:0 auto;">
+    <span class="section-eyebrow">What We Offer</span>
+    <h2 class="section-title">Our Bespoke <em>Services</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--mid);line-height:1.7;text-align:center;">Every service is personal, precise and crafted with care — because you deserve to feel extraordinary.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🧵</div>
+      <h3>Bespoke Tailoring</h3>
+      <p>Custom-stitched outfits crafted to your exact measurements, style preferences and occasion. Salwar suits, kurtas, co-ord sets, blouses and more — made just for you.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👗</div>
+      <h3>Styling Consultation</h3>
+      <p>One-on-one guidance to match the right fabric, silhouette and occasion. Whether you have a wedding, festival or special event — we help you look your absolute best.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📦</div>
+      <h3>Custom Orders</h3>
+      <p>Unstitched sets, readymade garments or full outfit builds — including lehengas, sarees with fall and blouses, and complete occasion wear packages.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Fabric + Outfit Bundle</h3>
+      <p>Choose your fabric from our collection and we take care of the stitching too. A seamless end-to-end experience from fabric selection to finished outfit.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💍</div>
+      <h3>Bridal Outfits</h3>
+      <p>Bridal lehengas, sarees, and trousseau sets crafted with love. We source the finest fabrics and stitch them to your exact vision for your most special day.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌍</div>
+      <h3>Worldwide Orders</h3>
+      <p>Live outside India? No problem. We take orders from clients worldwide — discuss your requirements on WhatsApp and we ship your finished outfit to your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process-section">
+  <span class="section-eyebrow" style="color:var(--magenta-light);">Simple Process</span>
+  <h2 class="section-title">How Bespoke <em>Works</em></h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <h4>Consultation</h4>
+      <p>WhatsApp us with your occasion, requirements and fabric preferences. We discuss options and guide you.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <h4>Fabric Selection</h4>
+      <p>Choose from our curated fabric collection or bring your own. We source the perfect fabric for your vision.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <h4>Measurements & Design</h4>
+      <p>Share your measurements and design preferences. We finalise the silhouette, cut and detailing together.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <h4>Delivery</h4>
+      <p>Your finished outfit is carefully packed and delivered to your door — pan-India and worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box">
+    <h3>Ready To Begin?</h3>
+    <p>Tell us your occasion, your vision, your fabric dream — and we'll make it happen. WhatsApp us today and let's create something extraordinary together.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/917400031405?text=Hi%2C%20I%27m%20interested%20in%20your%20bespoke%20tailoring%20services.%20Can%20you%20share%20more%20details%3F" class="btn-primary">💬 WhatsApp For Bespoke</a>
+      <a href="mailto:deseosindia@gmail.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--royal);color:white;padding:16px 32px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;">📧 Email Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" alt="Deseos Fabrics" />
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#fabrics">Fabrics</a>
+    <a href="bespoke.html">Bespoke</a>
+    <a href="wholesale.html">Wholesale</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://instagram.com/deseosfabrics">@deseosfabrics</a>
+  </div>
+  <p>© 2026 Deseos Fabrics · Mumbai, India · 🌍 Worldwide Delivery · <a href="mailto:deseosindia@gmail.com">deseosindia@gmail.com</a></p>
+</footer>
+
+</body>
+</html>

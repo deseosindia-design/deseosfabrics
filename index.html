@@ -547,6 +547,10 @@
 
     .fabric-card:hover .fabric-icon::after { transform: scaleX(1); }
 
+    /* Sequin card — real photo, no background bleed or bottom gradient line */
+    .sequin-card .fabric-icon { background: none; }
+    .sequin-card .fabric-icon::after { display: none; }
+
     .fabric-overlay {
       position: absolute;
       inset: 0;

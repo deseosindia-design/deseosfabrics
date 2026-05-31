@@ -547,11 +547,12 @@
 
     .fabric-card:hover .fabric-icon::after { transform: scaleX(1); }
 
-    /* Sequin card — real photo, no background bleed, no gradient line, lighter overlay */
+    /* Sequin card — real photo overrides */
     .sequin-card .fabric-icon { background: none; }
     .sequin-card .fabric-icon::after { display: none; }
-    .sequin-card .fabric-overlay { background: linear-gradient(to top, rgba(26,58,158,0.3), transparent); }
-    .sequin-card:hover .fabric-overlay { opacity: 0; } /* JS handles this instead */
+    .sequin-card .fabric-overlay { background: linear-gradient(to top, rgba(26,58,158,0.3), transparent); opacity: 0; }
+    .sequin-card:hover { transform: none !important; box-shadow: none !important; }
+    .sequin-card:hover .fabric-overlay { opacity: 0 !important; } /* JS controls overlay only */
 
     .fabric-overlay {
       position: absolute;

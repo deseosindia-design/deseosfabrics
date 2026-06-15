@@ -547,13 +547,6 @@
 
     .fabric-card:hover .fabric-icon::after { transform: scaleX(1); }
 
-    /* Sequin card — real photo overrides */
-    .sequin-card .fabric-icon { background: none; }
-    .sequin-card .fabric-icon::after { display: none; }
-    .sequin-card .fabric-overlay { background: linear-gradient(to top, rgba(26,58,158,0.3), transparent); opacity: 0; }
-    .sequin-card:hover { transform: none !important; box-shadow: none !important; }
-    .sequin-card:hover .fabric-overlay { opacity: 0 !important; } /* JS controls overlay only */
-
     .fabric-overlay {
       position: absolute;
       inset: 0;
@@ -1300,7 +1293,7 @@
       <img src="logo.png" alt="Deseos Fabrics — We Design Confidence" />
     </div>
     <div class="hero-badges">
-      <div class="badge"><span>12.8K+</span>Instagram Family</div>
+      <div class="badge"><span>13.1K+</span>Instagram Family</div>
       <div class="badge"><span>🌍</span>Worldwide Delivery</div>
     </div>
   </div>
@@ -1317,7 +1310,7 @@
     </div>
     <div class="about-stat-row">
       <div class="about-stat">
-        <div class="num">12.8K</div>
+        <div class="num">13.1K</div>
         <div class="label">Followers</div>
       </div>
       <div class="about-stat">
@@ -1392,17 +1385,17 @@
     <!-- IMPORTED NET SEQUIN — Interactive Colour Switcher Card -->
     <div class="fabric-card sequin-card" id="sequin-card" onclick="window.open('https://wa.me/917400031405?text=Hi%2C%20I%27m%20interested%20in%20your%20Imported%20Net%20Sequin%20fabric.%20Please%20give%20me%20details.','_blank')" style="cursor:pointer;">
       <div class="fabric-icon" id="sequin-preview" style="position:relative;overflow:hidden;">
-        <img id="sequin-img" src="fabric-sequin-darkpink.jpeg" alt="Imported Net Sequin Fabric" style="width:100%;height:100%;object-fit:cover;transition:opacity 0.35s ease;" />
+        <img id="sequin-img" src="fabric-sequin-silver.jpeg" alt="Imported Net Sequin Fabric" style="width:100%;height:100%;object-fit:cover;transition:opacity 0.35s ease;" />
         <div class="fabric-overlay" id="sequin-overlay"><span>💬 Enquire Now</span></div>
-        <div style="position:absolute;top:12px;left:12px;background:var(--royal);color:white;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:5px 10px;border-radius:2px;text-transform:uppercase;z-index:3;">58" Wide</div>
+        <div style="position:absolute;top:12px;left:12px;background:rgba(26,20,16,0.72);backdrop-filter:blur(4px);color:white;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;padding:5px 10px;border-radius:2px;text-transform:uppercase;z-index:3;">58" Wide</div>
         <div style="position:absolute;top:12px;right:12px;background:var(--magenta);color:white;font-family:'Jost',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:5px 10px;border-radius:2px;text-transform:uppercase;z-index:3;">Imported</div>
       </div>
       <div class="fabric-label">Imported Net Sequin</div>
       <div class="fabric-types">Lehenga · Saree Blouse · Evening Gowns · Cocktail Wear</div>
       <div style="display:flex;align-items:center;gap:10px;padding:4px 16px 4px;" onclick="event.stopPropagation()">
         <span style="font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);">Colours</span>
-        <button onclick="event.stopPropagation();switchSequin(0)" id="swatch-0" title="Dark Pink" style="width:24px;height:24px;border-radius:50%;background:#b05070;border:3px solid var(--magenta);cursor:pointer;transition:all 0.2s;outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--magenta);"></button>
-        <button onclick="event.stopPropagation();switchSequin(1)" id="swatch-1" title="Silver" style="width:24px;height:24px;border-radius:50%;background:#c8c0b0;border:3px solid transparent;cursor:pointer;transition:all 0.2s;outline:none;"></button>
+        <button onclick="event.stopPropagation();switchSequin(0)" id="swatch-0" title="White" style="width:24px;height:24px;border-radius:50%;background:#f0ece4;border:3px solid var(--magenta);cursor:pointer;transition:all 0.2s;outline:none;box-shadow:0 0 0 2px white,0 0 0 4px var(--magenta);"></button>
+        <button onclick="event.stopPropagation();switchSequin(1)" id="swatch-1" title="Dark Pink" style="width:24px;height:24px;border-radius:50%;background:#b05070;border:3px solid transparent;cursor:pointer;transition:all 0.2s;outline:none;"></button>
         <button onclick="event.stopPropagation();switchSequin(2)" id="swatch-2" title="Beige" style="width:24px;height:24px;border-radius:50%;background:#c8b89a;border:3px solid transparent;cursor:pointer;transition:all 0.2s;outline:none;"></button>
       </div>
       <div class="fabric-desc">Luxurious imported net with scattered sequins — lightweight, sheer and glamorous</div>
@@ -1413,8 +1406,8 @@
 
     <script>
       const sequinData = [
-        { img: 'fabric-sequin-darkpink.jpeg' },
         { img: 'fabric-sequin-silver.jpeg' },
+        { img: 'fabric-sequin-darkpink.jpeg' },
         { img: 'fabric-sequin-beige.jpeg' }
       ];
       let sequinActive = 0;
@@ -1430,15 +1423,11 @@
         });
         sequinActive = idx;
       }
-      // Hover overlay — JS controlled so CSS hover shade doesn't interfere
-      window.addEventListener('DOMContentLoaded', function() {
-        const card = document.getElementById('sequin-card');
-        const overlay = document.getElementById('sequin-overlay');
-        if (card && overlay) {
-          card.addEventListener('mouseenter', () => overlay.style.opacity = '1');
-          card.addEventListener('mouseleave', () => overlay.style.opacity = '0');
-        }
-      });
+      // Hover overlay — mirrors .fabric-card:hover .fabric-overlay behaviour
+      const card = document.getElementById('sequin-card');
+      const overlay = document.getElementById('sequin-overlay');
+      card.addEventListener('mouseenter', () => overlay.style.opacity = '1');
+      card.addEventListener('mouseleave', () => overlay.style.opacity = '0');
     </script>
 
     <a href="https://wa.me/917400031405?text=Hi%2C%20I%27m%20interested%20in%20your%20Light%20Weaves.%20Can%20you%20share%20what%27s%20available%3F" class="fabric-card" target="_blank">
@@ -1616,7 +1605,7 @@
 
     <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:24px 16px;text-align:center;">
       <div style="font-size:28px;margin-bottom:10px;">👥</div>
-      <p style="font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:white;margin-bottom:4px;">12.8K+ Community</p>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;font-weight:600;color:white;margin-bottom:4px;">13.1K+ Community</p>
       <p style="font-family:'Jost',sans-serif;font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.05em;">Trusted customers</p>
     </div>
 
@@ -1711,7 +1700,7 @@
     <a href="https://instagram.com/deseosfabrics" class="contact-card instagram">
       <div class="contact-icon">📸</div>
       <h4>Instagram</h4>
-      <p>@deseosfabrics · 12.8K followers · New drops daily</p>
+      <p>@deseosfabrics · 13.1K+ followers · New drops daily</p>
       <span class="link-label">Follow Us →</span>
     </a>
     <a href="mailto:enquiry@deseosfabrics.com" class="contact-card email">

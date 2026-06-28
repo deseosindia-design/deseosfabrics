@@ -691,13 +691,13 @@
   // Shade positions as % of image width (left, width) for the swatch card area
   // Card sits roughly centre of image, strips are equal width
   const shadePositions = {
-    'A': { left: 0.2625, width: 0.0375 },
-    'B': { left: 0.300, width: 0.0375 },
-    'C': { left: 0.3375, width: 0.0375 },
-    'D': { left: 0.375, width: 0.0375 }
+    'A': { left: 0.0,  width: 0.25 },
+    'B': { left: 0.25, width: 0.25 },
+    'C': { left: 0.50, width: 0.25 },
+    'D': { left: 0.75, width: 0.25 }
   };
-  const stripTop = 0.408;
-  const stripHeight = 0.375;
+  const stripTop = 0.0;
+  const stripHeight = 1.0;
 
   function showNormal(el, src) {
     const mainImg = document.getElementById('popupMainImg');
@@ -750,7 +750,7 @@
       canvas.style.objectFit = 'cover';
       canvas.style.borderRadius = '8px 8px 0 0';
     };
-    sourceImg.src = 'denim-sequin-swatch.jpeg';
+    sourceImg.src = 'denim sequin shade card.jpeg';
   }
 </script>
 

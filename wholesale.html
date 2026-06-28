@@ -44,9 +44,8 @@
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo img { height: 48px; width: 48px; border-radius: 50%; object-fit: cover; }
     .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--magenta); }
-    .nav-back { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-    .nav-back:hover { color: var(--magenta); }
     .nav-cta { background: var(--magenta); color: white !important; padding: 10px 22px; border-radius: 2px; font-weight: 600 !important; text-decoration: none; font-size: 13px; letter-spacing: 0.08em; }
+    .nav-cta:hover { background: var(--magenta-light); }
 
     /* HERO */
     .wholesale-hero {
@@ -65,20 +64,126 @@
     .wholesale-hero-content { position: relative; z-index: 2; max-width: 800px; }
     .wholesale-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 72px); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 24px; }
     .wholesale-hero h1 em { font-style: italic; color: var(--magenta-light); }
-    .wholesale-hero p { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 40px; text-align: center; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--magenta); color: white; padding: 16px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
-    .btn-primary:hover { background: var(--magenta-light); transform: translateY(-2px); }
-    .btn-white { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--royal); padding: 16px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
-    .btn-white:hover { background: var(--magenta); color: white; }
+    .wholesale-hero p { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.8); line-height: 1.7; text-align: center; }
 
     section { padding: 100px 80px; }
 
-    /* WHO WE WORK WITH */
-    .clients-section { background: var(--cream); }
+    /* FABRIC CATEGORIES */
+    .categories-section { background: var(--white); padding: 80px 80px; }
     .section-eyebrow { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--magenta); margin-bottom: 16px; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 700; line-height: 1.15; color: var(--dark); margin-bottom: 20px; }
     .section-title em { font-style: italic; color: var(--magenta); }
 
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 380px;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+
+    .category-card .card-bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s ease;
+    }
+
+    .category-card:hover .card-bg { transform: scale(1.05); }
+
+    .category-card .card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,20,16,0.85) 0%, rgba(26,20,16,0.3) 50%, rgba(26,20,16,0.1) 100%);
+      transition: background 0.3s;
+    }
+
+    .category-card:hover .card-overlay {
+      background: linear-gradient(to top, rgba(26,58,158,0.85) 0%, rgba(26,58,158,0.4) 50%, rgba(26,58,158,0.1) 100%);
+    }
+
+    .category-card .card-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 32px;
+      z-index: 2;
+    }
+
+    .category-card .card-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--magenta-light);
+      margin-bottom: 8px;
+    }
+
+    .category-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .category-card .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--magenta);
+      color: white;
+      padding: 10px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .category-card:hover .card-btn { background: var(--magenta-light); }
+
+    /* Coming Soon Cards */
+    .category-card.coming-soon {
+      cursor: default;
+    }
+    .category-card.coming-soon .card-bg {
+      background-color: var(--cream-dark);
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(90,74,58,0.05) 0px,
+        rgba(90,74,58,0.05) 1px,
+        transparent 1px,
+        transparent 12px
+      );
+    }
+    .category-card.coming-soon .card-overlay {
+      background: linear-gradient(to top, rgba(26,20,16,0.6) 0%, rgba(26,20,16,0.2) 100%);
+    }
+    .category-card.coming-soon .card-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: default;
+    }
+    .category-card.coming-soon:hover .card-bg { transform: none; }
+    .category-card.coming-soon:hover .card-overlay {
+      background: linear-gradient(to top, rgba(26,20,16,0.6) 0%, rgba(26,20,16,0.2) 100%);
+    }
+    .category-card.coming-soon:hover .card-btn { background: rgba(255,255,255,0.15); }
+
+    /* WHO WE WORK WITH */
+    .clients-section { background: var(--cream); }
     .clients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
     .client-card { background: white; border-radius: 8px; padding: 32px 24px; text-align: center; border-top: 3px solid var(--magenta); transition: all 0.3s; }
     .client-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,58,158,0.1); }
@@ -110,6 +215,8 @@
     .cta-box h3 { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; color: var(--dark); margin-bottom: 16px; }
     .cta-box p { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--mid); line-height: 1.7; margin-bottom: 32px; text-align: center; }
     .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--magenta); color: white; padding: 16px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; }
+    .btn-primary:hover { background: var(--magenta-light); transform: translateY(-2px); }
 
     /* FOOTER */
     footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 40px 80px; }
@@ -123,7 +230,9 @@
     @media (max-width: 900px) {
       nav { padding: 12px 20px; }
       section { padding: 60px 20px; }
+      .categories-section { padding: 60px 20px; }
       .wholesale-hero { padding: 100px 20px 60px; }
+      .categories-grid { grid-template-columns: 1fr; }
       .clients-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -139,7 +248,7 @@
     <img src="logo.png" alt="Deseos Fabrics" />
     <span class="nav-brand-name">Deseos</span>
   </a>
-  <a href="mailto:enquiry@deseosfabrics.com" class="nav-cta">Get B2B Pricing</a>
+  <a href="#fabrics" class="nav-cta">View Fabrics</a>
 </nav>
 
 <!-- HERO -->
@@ -148,12 +257,82 @@
     <div class="section-eyebrow" style="color:var(--magenta-light);">Wholesale & B2B</div>
     <h1>Premium Fabrics For Your <em>Business</em></h1>
     <p>We are a GST-registered wholesale fabric supplier based in Mumbai — partnering with boutiques, designers, manufacturers and businesses across India and worldwide. Competitive pricing, reliable sourcing, fast support.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="https://wa.me/917400438493?text=Hi%2C%20I%27m%20interested%20in%20B2B%20wholesale%20pricing%20from%20Deseos%20Fabrics." class="btn-primary">💬 WhatsApp For Pricing</a>
-      <a href="mailto:enquiry@deseosfabrics.com" class="btn-white">📧 Email Us</a>
-    </div>
   </div>
 </div>
+
+<!-- FABRIC CATEGORIES -->
+<section class="categories-section" id="fabrics">
+  <div style="text-align:center;max-width:600px;margin:0 auto;">
+    <div class="section-eyebrow">Our Collections</div>
+    <h2 class="section-title">Browse By <em>Fabric</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--mid);line-height:1.7;text-align:center;">Curated wholesale collections across premium fabric categories. Click any category to explore available fabrics, pricing and details.</p>
+  </div>
+  <div class="categories-grid">
+
+    <!-- DENIMS — Active -->
+    <a href="denims.html" class="category-card">
+      <div class="card-bg" style="background-image:url('denim-collection.jpeg');"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Wholesale Collection</div>
+        <h3>Denims</h3>
+        <span class="card-btn">View Collection →</span>
+      </div>
+    </a>
+
+    <!-- COMING SOON x5 -->
+    <div class="category-card coming-soon">
+      <div class="card-bg"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Coming Soon</div>
+        <h3>Sequins</h3>
+        <span class="card-btn">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="category-card coming-soon">
+      <div class="card-bg"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Coming Soon</div>
+        <h3>Nets & Laces</h3>
+        <span class="card-btn">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="category-card coming-soon">
+      <div class="card-bg"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Coming Soon</div>
+        <h3>Silks</h3>
+        <span class="card-btn">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="category-card coming-soon">
+      <div class="card-bg"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Coming Soon</div>
+        <h3>Georgettes</h3>
+        <span class="card-btn">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="category-card coming-soon">
+      <div class="card-bg"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-label">Coming Soon</div>
+        <h3>Embroidered</h3>
+        <span class="card-btn">Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- WHO WE WORK WITH -->
 <section class="clients-section">
@@ -200,7 +379,7 @@
   <h2 class="section-title" style="color:white;">How B2B <em>Orders Work</em></h2>
   <div class="process-grid">
     <div class="process-step"><div class="process-num">1</div><h4>Enquire</h4><p>WhatsApp or email us with your fabric requirements, quantity and timeline</p></div>
-    <div class="process-step"><div class="process-num">2</div><h4>Get Samples</h4><p>We send fabric samples for approval before bulk ordering</p></div>
+    <div class="process-step"><div class="process-num">2</div><h4>Get Quote</h4><p>We send you pricing, availability and fabric details within 24 hours</p></div>
     <div class="process-step"><div class="process-num">3</div><h4>Confirm Order</h4><p>Finalise quantity, pricing and delivery. We raise a GST invoice</p></div>
     <div class="process-step"><div class="process-num">4</div><h4>We Deliver</h4><p>Carefully packed and shipped to your door — anywhere in India or worldwide</p></div>
   </div>
@@ -210,9 +389,9 @@
 <section class="cta-section">
   <div class="cta-box">
     <h3>Ready To Partner With Us?</h3>
-    <p>Get in touch today for wholesale pricing, samples and sourcing enquiries. We respond fast and love working with businesses.</p>
+    <p>Get in touch today for wholesale pricing and sourcing enquiries. We respond fast and love working with businesses.</p>
     <div class="cta-buttons">
-      <a href="https://wa.me/917400438493?text=Hi%2C%20I%27m%20interested%20in%20B2B%20wholesale%20pricing%20from%20Deseos%20Fabrics." class="btn-primary">💬 WhatsApp Us Now</a>
+      <a href="https://wa.me/917400031405?text=Hi%2C%20I%27m%20interested%20in%20B2B%20wholesale%20pricing%20from%20Deseos%20Fabrics." class="btn-primary">💬 WhatsApp Us Now</a>
       <a href="mailto:enquiry@deseosfabrics.com" style="display:inline-flex;align-items:center;gap:10px;background:var(--royal);color:white;padding:16px 32px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;">📧 enquiry@deseosfabrics.com</a>
     </div>
   </div>

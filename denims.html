@@ -251,7 +251,18 @@
     }
     .popup-main-image.shade-image {
       transform: rotate(90deg);
-      height: 320px;
+      height: 180px;
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+    }
+    .popup-gallery.shade-active {
+      height: 200px;
+      overflow: hidden;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .popup-thumbs {
       display: flex;
@@ -640,16 +651,19 @@
 
   function changeImage(el, src) {
     const mainImg = document.getElementById('popupMainImg');
+    const gallery = mainImg.closest('.popup-gallery');
     mainImg.src = src;
     if (el.classList.contains('popup-thumb')) {
       document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
       mainImg.classList.remove('shade-image');
+      gallery.classList.remove('shade-active');
     }
     if (el.classList.contains('shade-chip')) {
       document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
       el.classList.add('active-shade');
       mainImg.classList.add('shade-image');
+      gallery.classList.add('shade-active');
     }
   }
 </script>

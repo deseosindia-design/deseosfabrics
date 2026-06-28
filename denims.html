@@ -238,7 +238,7 @@
     }
     .popup-close:hover { background: var(--magenta); color: white; }
 
-    .popup-gallery { width: 100%; }
+    .popup-gallery { width: 100%; position: relative; }
     .popup-main-image {
       width: 100%;
       height: 320px;
@@ -250,14 +250,50 @@
       transition: opacity 0.3s;
     }
     .popup-main-image.shade-image {
-      transform: rotate(90deg);
-      height: 180px;
-      width: 60%;
-      margin: 0 auto;
-      display: block;
+      object-fit: cover;
+      object-position: center 60%;
     }
-    .popup-gallery.shade-active {
-      height: 200px;
+    .popup-gallery.shade-active { position: relative; }
+
+    /* Shade highlight overlay */
+    .shade-overlay {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 320px;
+      border-radius: 8px 8px 0 0;
+      pointer-events: none;
+    }
+    .shade-overlay.active { display: block; }
+
+    /* Dark overlay for non-selected strips */
+    .shade-overlay::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* Highlight cutout for selected strip */
+    .shade-overlay .highlight {
+      position: absolute;
+      top: 47%;
+      height: 50%;
+      background: transparent;
+      box-shadow: 0 0 0 3px var(--magenta), 0 0 20px rgba(224,24,122,0.6);
+      z-index: 2;
+    }
+
+    /* Clear the dark overlay for selected strip */
+    .shade-overlay .clear {
+      position: absolute;
+      top: 47%;
+      height: 50%;
+      background: transparent;
+      mix-blend-mode: normal;
+      z-index: 1;
+    }
       overflow: hidden;
       background: var(--cream);
       display: flex;
@@ -547,23 +583,26 @@
     <!-- FABRIC 1 POPUP -->
     <div id="fabric1-popup">
       <!-- Image Gallery -->
-      <div class="popup-gallery">
+      <div class="popup-gallery" id="popupGallery">
+        <!-- Canvas for shade highlight effect -->
+        <canvas id="shadeCanvas" style="display:none;width:100%;height:320px;border-radius:8px 8px 0 0;"></canvas>
         <img src="denim-sequin-swatch.jpeg" alt="Distressed Sequin Denim Fabric" class="popup-main-image" id="popupMainImg">
+
         <div class="popup-thumbs">
-          <img src="denim-sequin-swatch.jpeg" alt="Shade Card" class="popup-thumb active" onclick="changeImage(this, 'denim-sequin-swatch.jpeg')">
-          <img src="denim sequin swatch 1.jpeg" alt="Swatch 1" class="popup-thumb" onclick="changeImage(this, 'denim sequin swatch 1.jpeg')">
-          <img src="denim sequin swatch 2.jpeg" alt="Swatch 2" class="popup-thumb" onclick="changeImage(this, 'denim sequin swatch 2.jpeg')">
-          <img src="denim sequin shade card.jpeg" alt="Shade Card" class="popup-thumb" onclick="changeImage(this, 'denim sequin shade card.jpeg')">
+          <img src="denim-sequin-swatch.jpeg" alt="Shade Card" class="popup-thumb active" onclick="showNormal(this, 'denim-sequin-swatch.jpeg')">
+          <img src="denim sequin swatch 1.jpeg" alt="Swatch 1" class="popup-thumb" onclick="showNormal(this, 'denim sequin swatch 1.jpeg')">
+          <img src="denim sequin swatch 2.jpeg" alt="Swatch 2" class="popup-thumb" onclick="showNormal(this, 'denim sequin swatch 2.jpeg')">
+          <img src="denim sequin shade card.jpeg" alt="Shade Card" class="popup-thumb" onclick="showNormal(this, 'denim sequin shade card.jpeg')">
         </div>
       </div>
       <!-- Shades right below image -->
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip active-shade" onclick="changeImage(this, 'denim A.jpeg')">🔵 A — Light Blue</span>
-          <span class="shade-chip" onclick="changeImage(this, 'denim B.jpeg')">🌑 B — Dark Navy</span>
-          <span class="shade-chip" onclick="changeImage(this, 'denim C.jpeg')">🩵 C — Powder Blue</span>
-          <span class="shade-chip" onclick="changeImage(this, 'denim D.jpeg')">⚫ D — Black</span>
+          <span class="shade-chip active-shade" data-shade="A" onclick="changeImage(this, 'denim A.jpeg')">🔵 A — Light Blue</span>
+          <span class="shade-chip" data-shade="B" onclick="changeImage(this, 'denim B.jpeg')">🌑 B — Dark Navy</span>
+          <span class="shade-chip" data-shade="C" onclick="changeImage(this, 'denim C.jpeg')">🩵 C — Powder Blue</span>
+          <span class="shade-chip" data-shade="D" onclick="changeImage(this, 'denim D.jpeg')">⚫ D — Black</span>
         </div>
       </div>
 
@@ -649,22 +688,70 @@
     if (e.key === 'Escape') closePopup();
   });
 
-  function changeImage(el, src) {
+  // Shade positions as % of image width (left, width) for the swatch card area
+  // Card sits roughly centre of image, strips are equal width
+  const shadePositions = {
+    'A': { left: 0.285, width: 0.09 },
+    'B': { left: 0.375, width: 0.09 },
+    'C': { left: 0.465, width: 0.09 },
+    'D': { left: 0.555, width: 0.09 }
+  };
+  // Strip vertical position (top, height) as % of image height
+  const stripTop = 0.46;
+  const stripHeight = 0.50;
+
+  function showNormal(el, src) {
     const mainImg = document.getElementById('popupMainImg');
-    const gallery = mainImg.closest('.popup-gallery');
+    const canvas = document.getElementById('shadeCanvas');
+    document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    canvas.style.display = 'none';
+    mainImg.style.display = 'block';
     mainImg.src = src;
-    if (el.classList.contains('popup-thumb')) {
-      document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      mainImg.classList.remove('shade-image');
-      gallery.classList.remove('shade-active');
-    }
-    if (el.classList.contains('shade-chip')) {
-      document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
-      el.classList.add('active-shade');
-      mainImg.classList.add('shade-image');
-      gallery.classList.add('shade-active');
-    }
+    document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
+  }
+
+  function changeImage(el, src) {
+    document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
+    el.classList.add('active-shade');
+    const shade = el.getAttribute('data-shade');
+    const pos = shadePositions[shade];
+    const mainImg = document.getElementById('popupMainImg');
+    const canvas = document.getElementById('shadeCanvas');
+    const ctx = canvas.getContext('2d');
+    const sourceImg = new Image();
+    sourceImg.crossOrigin = 'anonymous';
+    sourceImg.onload = function() {
+      const W = sourceImg.naturalWidth;
+      const H = sourceImg.naturalHeight;
+      canvas.width = W;
+      canvas.height = H;
+      // Draw full image
+      ctx.drawImage(sourceImg, 0, 0, W, H);
+      // Blur everything
+      ctx.filter = 'blur(6px) brightness(0.5)';
+      ctx.drawImage(sourceImg, 0, 0, W, H);
+      ctx.filter = 'none';
+      // Clear and redraw the selected strip sharply
+      const sx = Math.floor(pos.left * W);
+      const sw = Math.floor(pos.width * W);
+      const sy = Math.floor(stripTop * H);
+      const sh = Math.floor(stripHeight * H);
+      ctx.clearRect(sx, sy, sw, sh);
+      ctx.drawImage(sourceImg, sx, sy, sw, sh, sx, sy, sw, sh);
+      // Draw magenta border around selected strip
+      ctx.strokeStyle = '#e0187a';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(sx, sy, sw, sh);
+      // Show canvas, hide img
+      mainImg.style.display = 'none';
+      canvas.style.display = 'block';
+      canvas.style.width = '100%';
+      canvas.style.height = '320px';
+      canvas.style.objectFit = 'cover';
+      canvas.style.borderRadius = '8px 8px 0 0';
+    };
+    sourceImg.src = 'denim-sequin-swatch.jpeg';
   }
 </script>
 

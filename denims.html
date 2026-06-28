@@ -238,24 +238,32 @@
     }
     .popup-close:hover { background: var(--magenta); color: white; }
 
-    .popup-image {
+    .popup-gallery { width: 100%; }
+    .popup-main-image {
       width: 100%;
       height: 320px;
       object-fit: cover;
       border-radius: 8px 8px 0 0;
       display: block;
+      transition: opacity 0.3s;
     }
-
-    .popup-image-placeholder {
-      width: 100%;
-      height: 320px;
-      background: var(--cream-dark);
+    .popup-thumbs {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-      border-radius: 8px 8px 0 0;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--cream);
     }
+    .popup-thumb {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .popup-thumb.active { border-color: var(--magenta); }
+    .popup-thumb:hover { border-color: var(--royal); }
 
     .popup-body { padding: 36px; }
 
@@ -491,7 +499,7 @@
 
     <!-- FABRIC 1 — Distressed Sequin Denim -->
     <div class="fabric-card" onclick="openPopup('fabric1')">
-      <img src="denim-sequin-swatch.jpg" alt="Distressed Sequin Denim Fabric — 4 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <img src="denim sequin swatch 1.jpeg" alt="Distressed Sequin Denim Fabric — 4 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
       <div class="fabric-card-image-placeholder" style="display:none;">🧵</div>
       <div class="fabric-card-body">
         <div class="fabric-card-code">DFDE28062026</div>
@@ -517,8 +525,15 @@
 
     <!-- FABRIC 1 POPUP -->
     <div id="fabric1-popup">
-      <img src="denim-sequin-swatch.jpg" alt="Distressed Sequin Denim Fabric — Deseos Fabrics" class="popup-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="popup-image-placeholder" style="display:none;">🧵</div>
+      <!-- Image Gallery -->
+      <div class="popup-gallery">
+        <img src="denim sequin swatch 1.jpeg" alt="Distressed Sequin Denim Fabric" class="popup-main-image" id="popupMainImg">
+        <div class="popup-thumbs">
+          <img src="denim sequin swatch 1.jpeg" alt="Swatch 1" class="popup-thumb active" onclick="changeImage(this, 'denim sequin swatch 1.jpeg')">
+          <img src="denim sequin swatch 2.jpeg" alt="Swatch 2" class="popup-thumb" onclick="changeImage(this, 'denim sequin swatch 2.jpeg')">
+          <img src="denim sequin shade card.jpeg" alt="Shade Card" class="popup-thumb" onclick="changeImage(this, 'denim sequin shade card.jpeg')">
+        </div>
+      </div>
       <div class="popup-body">
         <div class="popup-code">DFDE28062026 · Wholesale Only</div>
         <div class="popup-name">Distressed Sequin Denim Fabric</div>
@@ -618,6 +633,12 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closePopup();
   });
+
+  function changeImage(thumb, src) {
+    document.getElementById('popupMainImg').src = src;
+    document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
 </script>
 
 </body>

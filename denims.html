@@ -242,12 +242,18 @@
     .popup-main-image {
       width: 100%;
       height: 320px;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       background: var(--cream);
       border-radius: 8px 8px 0 0;
       display: block;
       transition: opacity 0.3s;
+    }
+    .popup-main-image.shade-image {
+      height: 200px;
+      object-fit: contain;
+      object-position: center;
+      background: var(--cream-dark);
     }
     .popup-thumbs {
       display: flex;
@@ -635,16 +641,17 @@
   });
 
   function changeImage(el, src) {
-    document.getElementById('popupMainImg').src = src;
-    // Handle thumbnails
+    const mainImg = document.getElementById('popupMainImg');
+    mainImg.src = src;
     if (el.classList.contains('popup-thumb')) {
       document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
+      mainImg.classList.remove('shade-image');
     }
-    // Handle shade chips
     if (el.classList.contains('shade-chip')) {
       document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
       el.classList.add('active-shade');
+      mainImg.classList.add('shade-image');
     }
   }
 </script>

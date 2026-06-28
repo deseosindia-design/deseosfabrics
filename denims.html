@@ -356,12 +356,16 @@
       font-family: 'Jost', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 8px 14px;
       border-radius: 2px;
       border: 1px solid var(--cream-dark);
       color: var(--dark);
       background: white;
+      cursor: pointer;
+      transition: all 0.2s;
     }
+    .shade-chip:hover { border-color: var(--royal); color: var(--royal); }
+    .shade-chip.active-shade { border-color: var(--magenta); color: var(--magenta); background: var(--magenta-pale); }
 
     .popup-moq {
       background: var(--royal);
@@ -573,12 +577,12 @@
         </div>
 
         <div class="popup-shades">
-          <h4>Available Shades</h4>
+          <h4>Available Shades — Click To View</h4>
           <div class="shades-list">
-            <span class="shade-chip">🔵 A — Light Blue</span>
-            <span class="shade-chip">🌑 B — Dark Navy</span>
-            <span class="shade-chip">🩵 C — Powder Blue</span>
-            <span class="shade-chip">⚫ D — Black</span>
+            <span class="shade-chip active-shade" onclick="changeImage(this, 'denim A.jpeg')">🔵 A — Light Blue</span>
+            <span class="shade-chip" onclick="changeImage(this, 'denim B.jpeg')">🌑 B — Dark Navy</span>
+            <span class="shade-chip" onclick="changeImage(this, 'denim C.jpeg')">🩵 C — Powder Blue</span>
+            <span class="shade-chip" onclick="changeImage(this, 'denim D.jpeg')">⚫ D — Black</span>
           </div>
         </div>
 
@@ -637,10 +641,18 @@
     if (e.key === 'Escape') closePopup();
   });
 
-  function changeImage(thumb, src) {
+  function changeImage(el, src) {
     document.getElementById('popupMainImg').src = src;
-    document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
+    // Handle thumbnails
+    if (el.classList.contains('popup-thumb')) {
+      document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+    // Handle shade chips
+    if (el.classList.contains('shade-chip')) {
+      document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
+      el.classList.add('active-shade');
+    }
   }
 </script>
 

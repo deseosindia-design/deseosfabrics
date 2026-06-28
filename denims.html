@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJGRBLZ16R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FJGRBLZ16R');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Denim Fabrics Wholesale | Deseos Fabrics Mumbai</title>
+  <meta name="description" content="Premium wholesale denim fabrics — distressed sequin denim, imported denim collections in multiple shades. MOQ 50 metres. Deseos Fabrics Mumbai."/>
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --magenta: #e0187a;
+      --magenta-light: #f0429a;
+      --magenta-pale: #fce8f3;
+      --royal: #1a3a9e;
+      --royal-light: #2d52c4;
+      --cream: #f5f0eb;
+      --cream-dark: #ede6de;
+      --dark: #1a1410;
+      --mid: #5a4a3a;
+      --white: #fffdf9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(255,253,249,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(224,24,122,0.12);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 48px; width: 48px; border-radius: 50%; object-fit: cover; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--magenta); }
+    .nav-back { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--magenta); }
+
+    /* HERO */
+    .page-hero {
+      min-height: 45vh;
+      background: var(--royal);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 80px 60px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url('denim-collection.jpeg');
+      background-size: cover; background-position: center;
+      opacity: 0.2;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(26,58,158,0.7) 0%, rgba(26,58,158,0.9) 100%);
+    }
+    .page-hero-content { position: relative; z-index: 2; max-width: 700px; }
+    .section-eyebrow { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--magenta-light); margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 20px; }
+    .page-hero h1 em { font-style: italic; color: var(--magenta-light); }
+    .page-hero p { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 80px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+    .breadcrumb a { color: var(--magenta); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* FABRICS GRID */
+    .fabrics-section { padding: 80px 80px; background: var(--white); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 44px); font-weight: 700; line-height: 1.15; color: var(--dark); margin-bottom: 8px; }
+    .section-title em { font-style: italic; color: var(--magenta); }
+
+    .fabrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .fabric-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(26,20,16,0.07);
+      transition: all 0.3s ease;
+      border: 1px solid var(--cream-dark);
+    }
+    .fabric-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(26,58,158,0.12);
+      border-color: var(--magenta);
+    }
+
+    .fabric-card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      background: var(--cream-dark);
+    }
+
+    .fabric-card-image-placeholder {
+      width: 100%;
+      height: 260px;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .fabric-card-body { padding: 24px; }
+
+    .fabric-card-code {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 8px;
+    }
+
+    .fabric-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .fabric-card-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .fabric-card-specs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .spec-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--cream);
+      color: var(--mid);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .fabric-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--royal);
+      color: white;
+      padding: 10px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+      justify-content: center;
+    }
+    .fabric-card-btn:hover { background: var(--magenta); }
+
+    /* POPUP OVERLAY */
+    .popup-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(26,20,16,0.75);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .popup-overlay.active { display: flex; }
+
+    .popup {
+      background: white;
+      border-radius: 8px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 32px 80px rgba(26,20,16,0.3);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      background: var(--cream);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .popup-close:hover { background: var(--magenta); color: white; }
+
+    .popup-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+
+    .popup-image-placeholder {
+      width: 100%;
+      height: 320px;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .popup-body { padding: 36px; }
+
+    .popup-code {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      margin-bottom: 8px;
+    }
+
+    .popup-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .popup-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .popup-details {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .popup-details h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .detail-item { }
+    .detail-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 2px;
+    }
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .popup-shades {
+      margin-bottom: 28px;
+    }
+    .popup-shades h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 12px;
+    }
+    .shades-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .shade-chip {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 2px;
+      border: 1px solid var(--cream-dark);
+      color: var(--dark);
+      background: white;
+    }
+
+    .popup-moq {
+      background: var(--royal);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .popup-enquiry h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .enquiry-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 14px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--magenta);
+      color: white;
+      padding: 14px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .btn-email:hover { background: var(--magenta-light); transform: translateY(-2px); }
+
+    .popup-disclaimer {
+      margin-top: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: var(--mid);
+      font-style: italic;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 40px 80px; }
+    footer img { height: 60px; width: 60px; border-radius: 50%; object-fit: cover; opacity: 0.85; margin-bottom: 16px; }
+    footer p { font-size: 12px; letter-spacing: 0.08em; line-height: 1.8; }
+    footer a { color: var(--magenta-light); text-decoration: none; }
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin: 16px 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links a:hover { color: var(--magenta-light); }
+
+    @media (max-width: 900px) {
+      nav { padding: 12px 20px; }
+      .page-hero { padding: 100px 20px 50px; }
+      .breadcrumb { padding: 12px 20px; }
+      .fabrics-section { padding: 60px 20px; }
+      .fabrics-grid { grid-template-columns: 1fr; }
+      .popup-body { padding: 24px; }
+      .detail-grid { grid-template-columns: 1fr 1fr; }
+      .enquiry-buttons { grid-template-columns: 1fr; }
+      footer { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Deseos Fabrics" />
+    <span class="nav-brand-name">Deseos</span>
+  </a>
+  <a href="wholesale.html" class="nav-back">← Back To Wholesale</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-eyebrow">Wholesale Collection</div>
+    <h1>Our <em>Denim</em> Fabrics</h1>
+    <p>Premium imported denim fabrics for boutiques, designers and garment manufacturers. MOQ 50 metres. Click any fabric to enquire.</p>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp;
+  <a href="wholesale.html">Wholesale</a> &nbsp;/&nbsp;
+  Denims
+</div>
+
+<!-- FABRICS -->
+<section class="fabrics-section">
+  <div>
+    <div class="section-eyebrow">Imported Collection</div>
+    <h2 class="section-title">Denim <em>Fabrics</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--mid);line-height:1.7;margin-top:12px;">Click on any fabric card to view full details and place a wholesale enquiry.</p>
+  </div>
+
+  <div class="fabrics-grid">
+
+    <!-- FABRIC 1 — Distressed Sequin Denim -->
+    <div class="fabric-card" onclick="openPopup('fabric1')">
+      <img src="denim-sequin-swatch.jpg" alt="Distressed Sequin Denim Fabric — 4 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fabric-card-image-placeholder" style="display:none;">🧵</div>
+      <div class="fabric-card-body">
+        <div class="fabric-card-code">DFDE28062026</div>
+        <div class="fabric-card-name">Distressed Sequin Denim</div>
+        <div class="fabric-card-desc">Imported denim with scattered sequins and frayed texture clusters. Available in 4 shades.</div>
+        <div class="fabric-card-specs">
+          <span class="spec-tag">320 GSM</span>
+          <span class="spec-tag">60"+ Width</span>
+          <span class="spec-tag">4 Shades</span>
+          <span class="spec-tag">Imported</span>
+        </div>
+        <button class="fabric-card-btn">View Details & Enquire →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopupOnOverlay(event)">
+  <div class="popup" id="popupBox">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+
+    <!-- FABRIC 1 POPUP -->
+    <div id="fabric1-popup">
+      <img src="denim-sequin-swatch.jpg" alt="Distressed Sequin Denim Fabric — Deseos Fabrics" class="popup-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="popup-image-placeholder" style="display:none;">🧵</div>
+      <div class="popup-body">
+        <div class="popup-code">DFDE28062026 · Wholesale Only</div>
+        <div class="popup-name">Distressed Sequin Denim Fabric</div>
+        <div class="popup-desc">Premium imported denim fabric with scattered sequins and distinctive frayed texture clusters. A fusion of casual denim attitude and high-fashion detailing — ideal for western wear, festive collections and designer labels.</div>
+
+        <div class="popup-details">
+          <h4>Fabric Specifications</h4>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <div class="detail-label">Composition</div>
+              <div class="detail-value">80% Cotton, 20% Polyester</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Width</div>
+              <div class="detail-value">60"+ inches</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">GSM</div>
+              <div class="detail-value">320 GSM</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Roll Size</div>
+              <div class="detail-value">100 Yards / Roll</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Origin</div>
+              <div class="detail-value">Imported</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Best For</div>
+              <div class="detail-value">Western Wear, Festive, Denim Labels</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup-shades">
+          <h4>Available Shades</h4>
+          <div class="shades-list">
+            <span class="shade-chip">🔵 A — Light Blue</span>
+            <span class="shade-chip">🌑 B — Dark Navy</span>
+            <span class="shade-chip">🩵 C — Powder Blue</span>
+            <span class="shade-chip">⚫ D — Black</span>
+          </div>
+        </div>
+
+        <div class="popup-moq">
+          💼 Wholesale Only &nbsp;·&nbsp; MOQ 50 Metres &nbsp;·&nbsp; Contact For Pricing
+        </div>
+
+        <div class="popup-enquiry">
+          <h4>Enquire About This Fabric</h4>
+          <div class="enquiry-buttons">
+            <a href="https://wa.me/917400031405?text=Hi%20Deseos%20Fabrics%2C%20I%20am%20interested%20in%20the%20Distressed%20Sequin%20Denim%20Fabric%20(DFDE28062026).%20Please%20share%20wholesale%20pricing%20and%20availability.%20Reference%3A%20deseosfabrics.com%2Fdenims.html" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="mailto:enquiry@deseosfabrics.com?subject=Wholesale%20Enquiry%20%E2%80%94%20Distressed%20Sequin%20Denim%20(DFDE28062026)&body=Hi%20Deseos%20Fabrics%2C%0A%0AI%20am%20interested%20in%20the%20following%20fabric%3A%0A%0AFabric%3A%20Distressed%20Sequin%20Denim%0ACode%3A%20DFDE28062026%0APage%3A%20deseosfabrics.com%2Fdenims.html%0A%0APlease%20share%20wholesale%20pricing%20and%20availability.%0A%0AShade%20Required%3A%0AQuantity%20(metres)%3A%0ADelivery%20Location%3A%0A%0AThank%20you." class="btn-email" target="_blank">📧 Email Us</a>
+          </div>
+        </div>
+
+        <div class="popup-disclaimer">
+          We are a fabric-selling brand and not all fabrics are manufactured by us. We curate from top sources to bring you the best.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" alt="Deseos Fabrics" />
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#fabrics">Fabrics</a>
+    <a href="wholesale.html">Wholesale</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://instagram.com/deseosfabrics">@deseosfabrics</a>
+  </div>
+  <p>© 2026 Deseos Fabrics · Mumbai, India · 🌍 Worldwide Delivery · GST: 27AKSPD7659J1ZF<br/>
+  <a href="mailto:enquiry@deseosfabrics.com">enquiry@deseosfabrics.com</a> · WhatsApp: +91 7400031405</p>
+</footer>
+
+<script>
+  function openPopup(fabricId) {
+    document.getElementById('popupOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    document.getElementById('popupOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closePopupOnOverlay(event) {
+    if (event.target === document.getElementById('popupOverlay')) {
+      closePopup();
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePopup();
+  });
+</script>
+
+</body>
+</html>

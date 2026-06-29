@@ -572,8 +572,25 @@
       </div>
     </div>
 
+    <!-- FABRIC 2 — Floral Net Embroidered Denim -->
+    <div class="fabric-card" onclick="openPopup('fabric2')">
+      <img src="denim_net_shade.jpeg" alt="Floral Net Embroidered Denim Fabric — 3 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fabric-card-image-placeholder" style="display:none;">🧵</div>
+      <div class="fabric-card-body">
+        <div class="fabric-card-code">DFDE29062026</div>
+        <div class="fabric-card-name">Floral Net Embroidered Denim</div>
+        <div class="fabric-card-desc">Imported denim with intricate white floral net embroidery. Available in 3 shades. MOQ 50 metres.</div>
+        <div class="fabric-card-specs">
+          <span class="spec-tag">350 GSM</span>
+          <span class="spec-tag">60" Width</span>
+          <span class="spec-tag">3 Shades</span>
+          <span class="spec-tag">Imported</span>
+        </div>
+        <button class="fabric-card-btn">View Details & Enquire →</button>
+      </div>
+    </div>
+
   </div>
-</section>
 
 <!-- POPUP -->
 <div class="popup-overlay" id="popupOverlay" onclick="closePopupOnOverlay(event)">
@@ -651,6 +668,54 @@
       </div>
     </div>
 
+    <!-- FABRIC 2 POPUP -->
+    <div id="fabric2-popup" style="display:none;">
+      <div class="popup-gallery" id="popupGallery2">
+        <img src="denim_net_shade.jpeg" alt="Floral Net Embroidered Denim Fabric" class="popup-main-image" id="popupMainImg2">
+        <div class="popup-thumbs">
+          <img src="denim_net_shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="showNormal2(this, 'denim_net_shade.jpeg')">
+          <img src="Denim_net_A.jpeg" alt="Powder Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim_net_A.jpeg')">
+          <img src="Denim_net_B.jpeg" alt="Dark Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim_net_B.jpeg')">
+          <img src="Denim_net_C.jpeg" alt="Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim_net_C.jpeg')">
+        </div>
+      </div>
+
+      <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
+        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
+        <div class="shades-list">
+          <span class="shade-chip active-shade" onclick="showNormal2(this, 'Denim_net_A.jpeg')">🩵 A — Powder Blue</span>
+          <span class="shade-chip" onclick="showNormal2(this, 'Denim_net_B.jpeg')">🌑 B — Dark Blue</span>
+          <span class="shade-chip" onclick="showNormal2(this, 'Denim_net_C.jpeg')">🔵 C — Blue</span>
+        </div>
+      </div>
+
+      <div class="popup-body">
+        <div class="popup-code">DFDE29062026 · Wholesale Only</div>
+        <div class="popup-name">Floral Net Embroidered Denim Fabric</div>
+        <div class="popup-desc">Premium imported denim fabric with intricate white floral net embroidery — a rare fusion of structured denim and delicate botanical artistry. Ideal for western wear, festive collections and designer labels. Available wholesale with a minimum order of 50 metres.</div>
+
+        <div class="popup-details">
+          <h4>Fabric Specifications</h4>
+          <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">Composition</div><div class="detail-value">85% Polyester, 15% Cotton</div></div>
+            <div class="detail-item"><div class="detail-label">Width</div><div class="detail-value">60" Approx</div></div>
+            <div class="detail-item"><div class="detail-label">GSM</div><div class="detail-value">350 GSM</div></div>
+            <div class="detail-item"><div class="detail-label">Roll Size</div><div class="detail-value">100 Yards / Roll</div></div>
+            <div class="detail-item"><div class="detail-label">Origin</div><div class="detail-value">Imported</div></div>
+            <div class="detail-item"><div class="detail-label">Best For</div><div class="detail-value">Western Wear, Festive, Bridal, Denim Labels</div></div>
+          </div>
+        </div>
+
+        <div class="popup-enquiry">
+          <h4>Enquire About This Fabric</h4>
+          <div class="enquiry-buttons">
+            <a href="https://wa.me/917400031405?text=Hi%20Deseos%20Fabrics%2C%20I%20am%20interested%20in%20the%20Floral%20Net%20Embroidered%20Denim%20Fabric%20(DFDE29062026).%20Please%20share%20wholesale%20pricing%20and%20availability.%20Reference%3A%20deseosfabrics.com%2Fdenims.html" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="mailto:enquiry@deseosfabrics.com?subject=Wholesale%20Enquiry%20%E2%80%94%20Floral%20Net%20Embroidered%20Denim%20(DFDE29062026)&body=Hi%20Deseos%20Fabrics%2C%0A%0AI%20am%20interested%20in%20the%20following%20fabric%3A%0A%0AFabric%3A%20Floral%20Net%20Embroidered%20Denim%0ACode%3A%20DFDE29062026%0APage%3A%20deseosfabrics.com%2Fdenims.html%0A%0APlease%20share%20wholesale%20pricing%20and%20availability.%0A%0AShade%20Required%3A%0AQuantity%20(metres)%3A%0ADelivery%20Location%3A%0A%0AThank%20you." class="btn-email" target="_blank">📧 Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -671,6 +736,29 @@
   function openPopup(fabricId) {
     document.getElementById('popupOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Show correct popup
+    document.getElementById('fabric1-popup').style.display = fabricId === 'fabric1' ? 'block' : 'none';
+    document.getElementById('fabric2-popup').style.display = fabricId === 'fabric2' ? 'block' : 'none';
+    // Reset fabric2 image if opening fabric2
+    if (fabricId === 'fabric2') {
+      document.getElementById('popupMainImg2').src = 'denim_net_shade.jpeg';
+      document.querySelectorAll('#fabric2-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
+      document.querySelectorAll('#fabric2-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
+    }
+  }
+
+  function showNormal2(el, src) {
+    const mainImg = document.getElementById('popupMainImg2');
+    mainImg.src = src;
+    if (el.classList.contains('popup-thumb')) {
+      document.querySelectorAll('#fabric2-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    }
+    if (el.classList.contains('shade-chip')) {
+      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+      el.classList.add('active-shade');
+    }
   }
 
   function closePopup() {

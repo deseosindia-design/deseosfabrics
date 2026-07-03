@@ -855,7 +855,7 @@
       ctx.filter = 'blur(6px) brightness(0.5)';
       ctx.drawImage(sourceImg, 0, 0, W, H);
       ctx.filter = 'none';
-      const positions = { 'A': 0.0, 'B': 0.333, 'C': 0.666 };
+      const positions = { 'A': 0.666, 'B': 0.333, 'C': 0.0 };
       const sx = Math.floor(positions[shade] * W);
       const sw = Math.floor(0.333 * W);
       ctx.clearRect(sx, 0, sw, H);

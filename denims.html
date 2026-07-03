@@ -206,9 +206,9 @@
       position: fixed; inset: 0; z-index: 200;
       background: rgba(26,20,16,0.75);
       backdrop-filter: blur(4px);
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 20px;
       overflow-y: auto;
     }
     .popup-overlay.active { display: flex; }
@@ -216,12 +216,13 @@
     .popup {
       background: white;
       border-radius: 8px;
-      max-width: 780px;
+      max-width: 680px;
       width: 100%;
-      max-height: 85vh;
-      overflow-y: auto;
       position: relative;
       box-shadow: 0 32px 80px rgba(26,20,16,0.3);
+      margin: auto;
+    }
+      margin: auto;
     }
 
     .popup-close {
@@ -239,7 +240,8 @@
     }
     .popup-close:hover { background: var(--magenta); color: white; }
 
-    .popup-gallery { width: 100%; position: relative; }
+    .popup-gallery { width: 100%; display: block; }
+    canvas { display: block; }
     .popup-main-image {
       width: 100%;
       height: 260px;
@@ -735,7 +737,6 @@
       </div>
     </div>
 
-  </div>
     <!-- FABRIC 3 POPUP -->
     <div id="fabric3-popup" style="display:none;">
       <div class="popup-gallery" id="popupGallery3">

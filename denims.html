@@ -994,7 +994,6 @@
     };
     const chips = document.querySelectorAll('#fabric3-popup .shade-chip');
     const filename = src;
-    alert('filename: ' + filename + ' chips found: ' + chips.length);
     if (imgToChip[filename] !== undefined) {
       chips[imgToChip[filename]].classList.add('active-shade');
     }

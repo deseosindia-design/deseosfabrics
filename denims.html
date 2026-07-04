@@ -988,14 +988,14 @@
     document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
-    // Hardcoded image to chip mapping
     const imgToChip = {
-      'Denim heart C.jpeg': 0,  // A — Regular Denim
-      'Denim heart B.jpeg': 1,  // B — Navy
-      'Denim heart A.jpeg': 2   // C — Light Denim
+      'Denim heart C.jpeg': 0,
+      'Denim heart B.jpeg': 1,
+      'Denim heart A.jpeg': 2
     };
     const chips = document.querySelectorAll('#fabric3-popup .shade-chip');
-    const filename = src.split('/').pop();
+    const filename = src;
+    alert('filename: ' + filename + ' chips found: ' + chips.length);
     if (imgToChip[filename] !== undefined) {
       chips[imgToChip[filename]].classList.add('active-shade');
     }

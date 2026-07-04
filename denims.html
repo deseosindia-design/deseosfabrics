@@ -774,19 +774,19 @@
         <canvas id="shadeCanvas3" style="display:none;width:100%;height:320px;border-radius:8px 8px 0 0;"></canvas>
         <img src="Denim heart shade.jpeg" alt="Heart Jacquard Denim Fabric" class="popup-main-image" id="popupMainImg3">
         <div class="popup-thumbs">
-          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal3v2(this, 'Denim heart shade.jpeg')">
-          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3v2(this, 'Denim heart C.jpeg')">
-          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="showNormal3v2(this, 'Denim heart B.jpeg')">
-          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3v2(this, 'Denim heart A.jpeg')">
+          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="f3thumb(this, 'Denim heart shade.jpeg')">
+          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="f3thumb(this, 'Denim heart C.jpeg')">
+          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="f3thumb(this, 'Denim heart B.jpeg')">
+          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="f3thumb(this, 'Denim heart A.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip shade-chip-f3" data-shade3="A" data-shade-id="A3" onclick="changeImage3v2(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
-          <span class="shade-chip shade-chip-f3" data-shade3="B" data-shade-id="B3" onclick="changeImage3v2(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip shade-chip-f3" data-shade3="C" data-shade-id="C3" onclick="changeImage3v2(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="A" data-shade-id="A3" onclick="f3chip(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="B" data-shade-id="B3" onclick="f3chip(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="C" data-shade-id="C3" onclick="f3chip(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
         </div>
       </div>
 
@@ -980,7 +980,7 @@
     sourceImg.src = 'Denim small heart shade2.jpeg';
   }
 
-  function showNormal3v2(el, src) {
+  function f3thumb(el, src) {
     const mainImg = document.getElementById('popupMainImg3');
     const canvas = document.getElementById('shadeCanvas3');
     canvas.style.display = 'none';
@@ -1001,7 +1001,7 @@
     }
   }
 
-  function changeImage3v2(el, src) {
+  function f3chip(el, src) {
     document.querySelectorAll('.shade-chip-f3').forEach(t => t.classList.remove('active-shade'));
     el.classList.add('active-shade');
     const chipToThumb = {

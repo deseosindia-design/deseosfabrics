@@ -497,14 +497,13 @@
     }
 
     /* FOOTER */
-    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 40px 80px; }
-    footer img { height: 60px; width: 60px; border-radius: 50%; object-fit: cover; opacity: 0.85; margin-bottom: 16px; }
-    footer p { font-size: 12px; letter-spacing: 0.08em; line-height: 1.8; }
-    footer a { color: var(--magenta-light); text-decoration: none; }
-    .footer-links { display: flex; justify-content: center; gap: 32px; margin: 16px 0; flex-wrap: wrap; }
-    .footer-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); text-align: center; padding: 24px 40px; }
+    footer img { height: 36px; width: 36px; border-radius: 50%; object-fit: cover; opacity: 0.6; margin-bottom: 10px; }
+    footer p { font-size: 10px; letter-spacing: 0.06em; line-height: 1.7; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; margin: 8px 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
     .footer-links a:hover { color: var(--magenta-light); }
-
     @media (max-width: 900px) {
       nav { padding: 12px 20px; }
       .page-hero { padding: 100px 20px 50px; }
@@ -601,6 +600,24 @@
         <div class="fabric-card-specs">
           <span class="spec-tag">260 GSM Approx</span>
           <span class="spec-tag">65"+ Width</span>
+          <span class="spec-tag">3 Shades</span>
+          <span class="spec-tag">Imported</span>
+        </div>
+        <button class="fabric-card-btn">View Details & Enquire →</button>
+      </div>
+    </div>
+
+    <!-- FABRIC 4 — Heart Carved Denim -->
+    <div class="fabric-card" onclick="openPopup('fabric4')">
+      <img src="Denim small heart shade2.jpeg" alt="Heart Carved Denim Fabric — 3 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fabric-card-image-placeholder" style="display:none;">🧵</div>
+      <div class="fabric-card-body">
+        <div class="fabric-card-code">DFDE04072026</div>
+        <div class="fabric-card-name">Heart Carved Denim</div>
+        <div class="fabric-card-desc">Imported denim with delicately carved heart motifs — created with distressed artistry elevated to a new level. Available in 3 shades. MOQ 50 metres.</div>
+        <div class="fabric-card-specs">
+          <span class="spec-tag">330 GSM</span>
+          <span class="spec-tag">68" Width</span>
           <span class="spec-tag">3 Shades</span>
           <span class="spec-tag">Imported</span>
         </div>
@@ -783,6 +800,56 @@
       </div>
     </div>
 
+    <!-- FABRIC 4 POPUP -->
+    <div id="fabric4-popup" style="display:none;">
+      <div class="popup-gallery" id="popupGallery4">
+        <canvas id="shadeCanvas4" style="display:none;width:100%;height:260px;border-radius:8px 8px 0 0;"></canvas>
+        <img src="Denim small heart shade2.jpeg" alt="Heart Carved Denim Fabric" class="popup-main-image" id="popupMainImg4">
+        <div class="popup-thumbs">
+          <img src="Denim small heart shade2.jpeg" alt="All Shades" class="popup-thumb active" onclick="showNormal4(this, 'Denim small heart shade2.jpeg')">
+          <img src="Denim small heart shade1.jpeg" alt="Shades View 2" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart shade1.jpeg')">
+          <img src="Denim small heart C.jpeg" alt="Regular Blue" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart C.jpeg')">
+          <img src="Denim small heart B.jpeg" alt="Navy" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart B.jpeg')">
+          <img src="Denim small heart A.jpeg" alt="Light Blue" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart A.jpeg')">
+        </div>
+      </div>
+
+      <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
+        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
+        <div class="shades-list">
+          <span class="shade-chip active-shade" data-shade4="A" onclick="changeImage4(this, 'Denim small heart C.jpeg')">🔵 A — Regular Blue</span>
+          <span class="shade-chip" data-shade4="B" onclick="changeImage4(this, 'Denim small heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip" data-shade4="C" onclick="changeImage4(this, 'Denim small heart A.jpeg')">🩵 C — Light Blue</span>
+        </div>
+      </div>
+
+      <div class="popup-body">
+        <div class="popup-code">DFDE04072026 · Wholesale Only</div>
+        <div class="popup-name">Heart Carved Denim Fabric</div>
+        <div class="popup-desc">Premium imported denim fabric with delicately carved heart motifs — created with the same artistry as distressed denim but elevated to an entirely new level of detail. A fabric where craftsmanship meets romance. Available wholesale with a minimum order of 50 metres.</div>
+
+        <div class="popup-details">
+          <h4>Fabric Specifications</h4>
+          <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">Composition</div><div class="detail-value">65% Cotton, 35% Polyester</div></div>
+            <div class="detail-item"><div class="detail-label">Width</div><div class="detail-value">68" Approx</div></div>
+            <div class="detail-item"><div class="detail-label">GSM</div><div class="detail-value">330 GSM</div></div>
+            <div class="detail-item"><div class="detail-label">Roll Size</div><div class="detail-value">100 Yards / Roll</div></div>
+            <div class="detail-item"><div class="detail-label">Origin</div><div class="detail-value">Imported</div></div>
+            <div class="detail-item"><div class="detail-label">Best For</div><div class="detail-value">Western Wear, Festive, Denim Labels</div></div>
+          </div>
+        </div>
+
+        <div class="popup-enquiry">
+          <h4>Enquire About This Fabric</h4>
+          <div class="enquiry-buttons">
+            <a href="https://wa.me/917400031405?text=Hi%20Deseos%20Fabrics%2C%20I%20am%20interested%20in%20the%20Heart%20Carved%20Denim%20Fabric%20(DFDE04072026).%20Please%20share%20wholesale%20pricing%20and%20availability.%20Reference%3A%20deseosfabrics.com%2Fdenims.html" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="mailto:enquiry@deseosfabrics.com?subject=Wholesale%20Enquiry%20%E2%80%94%20Heart%20Carved%20Denim%20(DFDE04072026)&body=Hi%20Deseos%20Fabrics%2C%0A%0AI%20am%20interested%20in%20the%20following%20fabric%3A%0A%0AFabric%3A%20Heart%20Carved%20Denim%0ACode%3A%20DFDE04072026%0APage%3A%20deseosfabrics.com%2Fdenims.html%0A%0APlease%20share%20wholesale%20pricing%20and%20availability.%0A%0AShade%20Required%3A%0AQuantity%20(metres)%3A%0ADelivery%20Location%3A%0A%0AThank%20you." class="btn-email" target="_blank">📧 Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -806,6 +873,7 @@
     document.getElementById('fabric1-popup').style.display = fabricId === 'fabric1' ? 'block' : 'none';
     document.getElementById('fabric2-popup').style.display = fabricId === 'fabric2' ? 'block' : 'none';
     document.getElementById('fabric3-popup').style.display = fabricId === 'fabric3' ? 'block' : 'none';
+    document.getElementById('fabric4-popup').style.display = fabricId === 'fabric4' ? 'block' : 'none';
     if (fabricId === 'fabric2') {
       document.getElementById('popupMainImg2').src = 'denim net shade.jpeg';
       document.querySelectorAll('#fabric2-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
@@ -818,6 +886,66 @@
       document.querySelectorAll('#fabric3-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
       document.querySelectorAll('#fabric3-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
     }
+    if (fabricId === 'fabric4') {
+      document.getElementById('popupMainImg4').src = 'Denim small heart shade2.jpeg';
+      document.getElementById('shadeCanvas4').style.display = 'none';
+      document.getElementById('popupMainImg4').style.display = 'block';
+      document.querySelectorAll('#fabric4-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
+      document.querySelectorAll('#fabric4-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
+    }
+  }
+
+  function showNormal4(el, src) {
+    const mainImg = document.getElementById('popupMainImg4');
+    const canvas = document.getElementById('shadeCanvas4');
+    canvas.style.display = 'none';
+    mainImg.style.display = 'block';
+    mainImg.src = src;
+    if (el.classList.contains('popup-thumb')) {
+      document.querySelectorAll('#fabric4-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    }
+    if (el.classList.contains('shade-chip')) {
+      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+      el.classList.add('active-shade');
+    }
+  }
+
+  function changeImage4(el, src) {
+    document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    el.classList.add('active-shade');
+    const shade = el.getAttribute('data-shade4');
+    const canvas = document.getElementById('shadeCanvas4');
+    const mainImg = document.getElementById('popupMainImg4');
+    const ctx = canvas.getContext('2d');
+    const sourceImg = new Image();
+    sourceImg.crossOrigin = 'anonymous';
+    sourceImg.onload = function() {
+      const W = sourceImg.naturalWidth;
+      const H = sourceImg.naturalHeight;
+      canvas.width = W;
+      canvas.height = H;
+      ctx.drawImage(sourceImg, 0, 0, W, H);
+      ctx.filter = 'blur(6px) brightness(0.5)';
+      ctx.drawImage(sourceImg, 0, 0, W, H);
+      ctx.filter = 'none';
+      // C=left(0.0) A=centre(0.333) B=right(0.667)
+      const positions = { 'A': 0.333, 'B': 0.667, 'C': 0.0 };
+      const sx = Math.floor(positions[shade] * W);
+      const sw = Math.floor(0.333 * W);
+      ctx.clearRect(sx, 0, sw, H);
+      ctx.drawImage(sourceImg, sx, 0, sw, H, sx, 0, sw, H);
+      ctx.strokeStyle = '#e0187a';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(sx, 0, sw, H);
+      mainImg.style.display = 'none';
+      canvas.style.display = 'block';
+      canvas.style.width = '100%';
+      canvas.style.height = '260px';
+      canvas.style.borderRadius = '8px 8px 0 0';
+    };
+    sourceImg.src = 'Denim small heart shade2.jpeg';
   }
 
   function showNormal3(el, src) {

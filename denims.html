@@ -784,9 +784,9 @@
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip" data-shade3="A" data-shade-id="A3" onclick="changeImage3v2(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
-          <span class="shade-chip" data-shade3="B" data-shade-id="B3" onclick="changeImage3v2(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip" data-shade3="C" data-shade-id="C3" onclick="changeImage3v2(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="A" data-shade-id="A3" onclick="changeImage3v2(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="B" data-shade-id="B3" onclick="changeImage3v2(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip shade-chip-f3" data-shade3="C" data-shade-id="C3" onclick="changeImage3v2(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
         </div>
       </div>
 
@@ -986,7 +986,7 @@
     canvas.style.display = 'none';
     mainImg.style.display = 'block';
     mainImg.src = src;
-    document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    document.querySelectorAll('.shade-chip-f3').forEach(t => t.classList.remove('active-shade'));
     document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     const imgToChip = {
@@ -994,7 +994,7 @@
       'Denim heart B.jpeg': 1,  // Navy thumb → B chip
       'Denim heart A.jpeg': 2   // Light Denim thumb → C chip
     };
-    const chips = document.querySelectorAll('#fabric3-popup .shade-chip');
+    const chips = document.querySelectorAll('.shade-chip-f3');
     const filename = src;
     if (imgToChip[filename] !== undefined) {
       chips[imgToChip[filename]].classList.add('active-shade');
@@ -1002,13 +1002,12 @@
   }
 
   function changeImage3v2(el, src) {
-    document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    document.querySelectorAll('.shade-chip-f3').forEach(t => t.classList.remove('active-shade'));
     el.classList.add('active-shade');
-    // Hardcoded chip to thumbnail mapping
     const chipToThumb = {
-      'Denim heart C.jpeg': 3,  // A chip → Regular Denim thumb (index 3)
-      'Denim heart B.jpeg': 2,  // B chip → Navy thumb (index 2)
-      'Denim heart A.jpeg': 1   // C chip → Light Denim thumb (index 1)
+      'Denim heart C.jpeg': 3,
+      'Denim heart B.jpeg': 2,
+      'Denim heart A.jpeg': 1
     };
     const thumbs = document.querySelectorAll('#fabric3-popup .popup-thumb');
     thumbs.forEach(t => t.classList.remove('active'));

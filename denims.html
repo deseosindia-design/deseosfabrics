@@ -758,18 +758,18 @@
         <img src="Denim heart shade.jpeg" alt="Heart Jacquard Denim Fabric" class="popup-main-image" id="popupMainImg3">
         <div class="popup-thumbs">
           <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal3(this, 'Denim heart shade.jpeg')">
-          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3(this, 'Denim heart C.jpeg')">
+          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3(this, 'Denim heart C.jpeg')">
           <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="showNormal3(this, 'Denim heart B.jpeg')">
-          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3(this, 'Denim heart A.jpeg')">
+          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3(this, 'Denim heart A.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip" data-shade3="A" data-shade-id="A3" onclick="changeImage3(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
+          <span class="shade-chip" data-shade3="A" data-shade-id="C3" onclick="changeImage3(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
           <span class="shade-chip" data-shade3="B" data-shade-id="B3" onclick="changeImage3(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip" data-shade3="C" data-shade-id="C3" onclick="changeImage3(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
+          <span class="shade-chip" data-shade3="C" data-shade-id="A3" onclick="changeImage3(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
         </div>
       </div>
 
@@ -970,8 +970,10 @@
       document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
       const target = el.getAttribute('data-shade-target');
+      console.log('Thumbnail clicked, target:', target);
       if (target) {
         const chip = document.querySelector(`#fabric3-popup [data-shade-id="${target}"]`);
+        console.log('Found chip:', chip);
         if (chip) chip.classList.add('active-shade');
       }
     }

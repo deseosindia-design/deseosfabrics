@@ -990,9 +990,9 @@
     document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     const imgToChip = {
-      'Denim heart C.jpeg': 0,
-      'Denim heart B.jpeg': 1,
-      'Denim heart A.jpeg': 2
+      'Denim heart C.jpeg': 0,  // Regular Denim thumb → A chip
+      'Denim heart B.jpeg': 1,  // Navy thumb → B chip
+      'Denim heart A.jpeg': 2   // Light Denim thumb → C chip
     };
     const chips = document.querySelectorAll('#fabric3-popup .shade-chip');
     const filename = src;
@@ -1006,9 +1006,9 @@
     el.classList.add('active-shade');
     // Hardcoded chip to thumbnail mapping
     const chipToThumb = {
-      'Denim heart C.jpeg': 1,  // A chip → Regular Denim thumb (index 1)
+      'Denim heart C.jpeg': 3,  // A chip → Regular Denim thumb (index 3)
       'Denim heart B.jpeg': 2,  // B chip → Navy thumb (index 2)
-      'Denim heart A.jpeg': 3   // C chip → Light Denim thumb (index 3)
+      'Denim heart A.jpeg': 1   // C chip → Light Denim thumb (index 1)
     };
     const thumbs = document.querySelectorAll('#fabric3-popup .popup-thumb');
     thumbs.forEach(t => t.classList.remove('active'));

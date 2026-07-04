@@ -989,16 +989,13 @@
     document.querySelectorAll('.shade-chip-f3').forEach(t => t.classList.remove('active-shade'));
     document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
-    const imgToChip = {
-      'Denim heart C.jpeg': 2,
-      'Denim heart B.jpeg': 1,
-      'Denim heart A.jpeg': 0
-    };
     const chips = document.querySelectorAll('.shade-chip-f3');
-    const filename = src;
-    if (imgToChip[filename] !== undefined) {
-      chips[imgToChip[filename]].classList.add('active-shade');
-    }
+    const chipMap = {
+      'Denim heart C.jpeg': chips[chips.length - 1],
+      'Denim heart B.jpeg': chips[1],
+      'Denim heart A.jpeg': chips[0]
+    };
+    if (chipMap[src]) chipMap[src].classList.add('active-shade');
   }
 
   function f3chip(el, src) {

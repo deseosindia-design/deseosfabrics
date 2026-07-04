@@ -990,9 +990,9 @@
     document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
     const imgToChip = {
-      'Denim heart C.jpeg': 0,  // Regular Denim thumb → A chip
-      'Denim heart B.jpeg': 1,  // Navy thumb → B chip
-      'Denim heart A.jpeg': 2   // Light Denim thumb → C chip
+      'Denim heart C.jpeg': 2,  // Regular Denim → highlight A (last chip)
+      'Denim heart B.jpeg': 1,  // Navy → highlight B (middle chip)
+      'Denim heart A.jpeg': 0   // Light Denim → highlight C (first chip)
     };
     const chips = document.querySelectorAll('.shade-chip-f3');
     const filename = src;

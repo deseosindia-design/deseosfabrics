@@ -915,32 +915,6 @@
       document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     }
   }
-    document.getElementById('popupOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('fabric1-popup').style.display = fabricId === 'fabric1' ? 'block' : 'none';
-    document.getElementById('fabric2-popup').style.display = fabricId === 'fabric2' ? 'block' : 'none';
-    document.getElementById('fabric3-popup').style.display = fabricId === 'fabric3' ? 'block' : 'none';
-    document.getElementById('fabric4-popup').style.display = fabricId === 'fabric4' ? 'block' : 'none';
-    if (fabricId === 'fabric2') {
-      document.getElementById('popupMainImg2').src = 'denim net shade.jpeg';
-      document.querySelectorAll('#fabric2-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
-    }
-    if (fabricId === 'fabric3') {
-      document.getElementById('popupMainImg3').src = 'Denim heart shade.jpeg';
-      document.getElementById('shadeCanvas3').style.display = 'none';
-      document.getElementById('popupMainImg3').style.display = 'block';
-      document.querySelectorAll('#fabric3-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
-    }
-    if (fabricId === 'fabric4') {
-      document.getElementById('popupMainImg4').src = 'Denim small heart shade2.jpeg';
-      document.getElementById('shadeCanvas4').style.display = 'none';
-      document.getElementById('popupMainImg4').style.display = 'block';
-      document.querySelectorAll('#fabric4-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
-    }
-  }
 
   function showNormal4(el, src) {
     const mainImg = document.getElementById('popupMainImg4');

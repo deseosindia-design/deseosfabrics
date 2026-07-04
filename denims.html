@@ -641,17 +641,17 @@
         <img src="denim-sequin-swatch.jpeg" alt="Distressed Sequin Denim Fabric" class="popup-main-image" id="popupMainImg">
 
         <div class="popup-thumbs">
-          <img src="denim-sequin-swatch.jpeg" alt="Shade Card" class="popup-thumb active" onclick="showNormal(this, 'denim-sequin-swatch.jpeg')">
-          <img src="denim sequin swatch 1.jpeg" alt="Swatch 1" class="popup-thumb" onclick="showNormal(this, 'denim sequin swatch 1.jpeg')">
-          <img src="denim sequin swatch 2.jpeg" alt="Swatch 2" class="popup-thumb" onclick="showNormal(this, 'denim sequin swatch 2.jpeg')">
-          <img src="denim sequin shade card.jpeg" alt="Shade Card" class="popup-thumb" onclick="showNormal(this, 'denim sequin shade card.jpeg')">
+          <img src="denim-sequin-swatch.jpeg" alt="Shade Card" class="popup-thumb active" data-shade-target="" onclick="showNormal(this, 'denim-sequin-swatch.jpeg')">
+          <img src="denim sequin swatch 1.jpeg" alt="Swatch 1" class="popup-thumb" data-shade-target="" onclick="showNormal(this, 'denim sequin swatch 1.jpeg')">
+          <img src="denim sequin swatch 2.jpeg" alt="Swatch 2" class="popup-thumb" data-shade-target="" onclick="showNormal(this, 'denim sequin swatch 2.jpeg')">
+          <img src="denim sequin shade card.jpeg" alt="Shade Card" class="popup-thumb" data-shade-target="" onclick="showNormal(this, 'denim sequin shade card.jpeg')">
         </div>
       </div>
       <!-- Shades right below image -->
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip active-shade" data-shade="A" onclick="changeImage(this, 'denim A.jpeg')">🔵 A — Light Blue</span>
+          <span class="shade-chip" data-shade="A" onclick="changeImage(this, 'denim A.jpeg')">🔵 A — Light Blue</span>
           <span class="shade-chip" data-shade="B" onclick="changeImage(this, 'denim B.jpeg')">🌑 B — Dark Navy</span>
           <span class="shade-chip" data-shade="C" onclick="changeImage(this, 'denim C.jpeg')">🩵 C — Powder Blue</span>
           <span class="shade-chip" data-shade="D" onclick="changeImage(this, 'denim D.jpeg')">⚫ D — Black</span>
@@ -708,19 +708,19 @@
       <div class="popup-gallery" id="popupGallery2">
         <img src="denim net shade.jpeg" alt="Floral Net Embroidered Denim Fabric" class="popup-main-image" id="popupMainImg2">
         <div class="popup-thumbs">
-          <img src="denim net shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="showNormal2(this, 'denim net shade.jpeg')">
-          <img src="Denim net A.jpeg" alt="Powder Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim net A.jpeg')">
-          <img src="Denim net B.jpeg" alt="Dark Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim net B.jpeg')">
-          <img src="Denim net C.jpeg" alt="Blue" class="popup-thumb" onclick="showNormal2(this, 'Denim net C.jpeg')">
+          <img src="denim net shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal2(this, 'denim net shade.jpeg')">
+          <img src="Denim net A.jpeg" alt="Powder Blue" class="popup-thumb" data-shade-target="A2" onclick="showNormal2(this, 'Denim net A.jpeg')">
+          <img src="Denim net B.jpeg" alt="Dark Blue" class="popup-thumb" data-shade-target="B2" onclick="showNormal2(this, 'Denim net B.jpeg')">
+          <img src="Denim net C.jpeg" alt="Blue" class="popup-thumb" data-shade-target="C2" onclick="showNormal2(this, 'Denim net C.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip active-shade" onclick="showNormal2(this, 'Denim net A.jpeg')">🩵 A — Powder Blue</span>
-          <span class="shade-chip" onclick="showNormal2(this, 'Denim net B.jpeg')">🌑 B — Dark Blue</span>
-          <span class="shade-chip" onclick="showNormal2(this, 'Denim net C.jpeg')">🔵 C — Blue</span>
+          <span class="shade-chip" data-shade-id="A2" onclick="showNormal2(this, 'Denim net A.jpeg')">🩵 A — Powder Blue</span>
+          <span class="shade-chip" data-shade-id="B2" onclick="showNormal2(this, 'Denim net B.jpeg')">🌑 B — Dark Blue</span>
+          <span class="shade-chip" data-shade-id="C2" onclick="showNormal2(this, 'Denim net C.jpeg')">🔵 C — Blue</span>
         </div>
       </div>
 
@@ -757,19 +757,19 @@
         <canvas id="shadeCanvas3" style="display:none;width:100%;height:320px;border-radius:8px 8px 0 0;"></canvas>
         <img src="Denim heart shade.jpeg" alt="Heart Jacquard Denim Fabric" class="popup-main-image" id="popupMainImg3">
         <div class="popup-thumbs">
-          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="showNormal3(this, 'Denim heart shade.jpeg')">
-          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" onclick="showNormal3(this, 'Denim heart C.jpeg')">
-          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" onclick="showNormal3(this, 'Denim heart B.jpeg')">
-          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" onclick="showNormal3(this, 'Denim heart A.jpeg')">
+          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal3(this, 'Denim heart shade.jpeg')">
+          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3(this, 'Denim heart C.jpeg')">
+          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="showNormal3(this, 'Denim heart B.jpeg')">
+          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3(this, 'Denim heart A.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip active-shade" data-shade3="A" onclick="changeImage3(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
-          <span class="shade-chip" data-shade3="B" onclick="changeImage3(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip" data-shade3="C" onclick="changeImage3(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
+          <span class="shade-chip" data-shade3="A" data-shade-id="A3" onclick="changeImage3(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
+          <span class="shade-chip" data-shade3="B" data-shade-id="B3" onclick="changeImage3(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip" data-shade3="C" data-shade-id="C3" onclick="changeImage3(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
         </div>
       </div>
 
@@ -806,20 +806,20 @@
         <canvas id="shadeCanvas4" style="display:none;width:100%;height:260px;border-radius:8px 8px 0 0;"></canvas>
         <img src="Denim small heart shade2.jpeg" alt="Heart Carved Denim Fabric" class="popup-main-image" id="popupMainImg4">
         <div class="popup-thumbs">
-          <img src="Denim small heart shade2.jpeg" alt="All Shades" class="popup-thumb active" onclick="showNormal4(this, 'Denim small heart shade2.jpeg')">
-          <img src="Denim small heart shade1.jpeg" alt="Shades View 2" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart shade1.jpeg')">
-          <img src="Denim small heart C.jpeg" alt="Regular Blue" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart C.jpeg')">
-          <img src="Denim small heart B.jpeg" alt="Navy" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart B.jpeg')">
-          <img src="Denim small heart A.jpeg" alt="Light Blue" class="popup-thumb" onclick="showNormal4(this, 'Denim small heart A.jpeg')">
+          <img src="Denim small heart shade2.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal4(this, 'Denim small heart shade2.jpeg')">
+          <img src="Denim small heart shade1.jpeg" alt="Shades View 2" class="popup-thumb" data-shade-target="" onclick="showNormal4(this, 'Denim small heart shade1.jpeg')">
+          <img src="Denim small heart C.jpeg" alt="Regular Blue" class="popup-thumb" data-shade-target="A4" onclick="showNormal4(this, 'Denim small heart C.jpeg')">
+          <img src="Denim small heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B4" onclick="showNormal4(this, 'Denim small heart B.jpeg')">
+          <img src="Denim small heart A.jpeg" alt="Light Blue" class="popup-thumb" data-shade-target="C4" onclick="showNormal4(this, 'Denim small heart A.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip active-shade" data-shade4="A" onclick="changeImage4(this, 'Denim small heart C.jpeg')">🔵 A — Regular Blue</span>
-          <span class="shade-chip" data-shade4="B" onclick="changeImage4(this, 'Denim small heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip" data-shade4="C" onclick="changeImage4(this, 'Denim small heart A.jpeg')">🩵 C — Light Blue</span>
+          <span class="shade-chip" data-shade4="A" data-shade-id="A4" onclick="changeImage4(this, 'Denim small heart C.jpeg')">🔵 A — Regular Blue</span>
+          <span class="shade-chip" data-shade4="B" data-shade-id="B4" onclick="changeImage4(this, 'Denim small heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip" data-shade4="C" data-shade-id="C4" onclick="changeImage4(this, 'Denim small heart A.jpeg')">🩵 C — Light Blue</span>
         </div>
       </div>
 
@@ -877,21 +877,21 @@
     if (fabricId === 'fabric2') {
       document.getElementById('popupMainImg2').src = 'denim net shade.jpeg';
       document.querySelectorAll('#fabric2-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric2-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
+      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     }
     if (fabricId === 'fabric3') {
       document.getElementById('popupMainImg3').src = 'Denim heart shade.jpeg';
       document.getElementById('shadeCanvas3').style.display = 'none';
       document.getElementById('popupMainImg3').style.display = 'block';
       document.querySelectorAll('#fabric3-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric3-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
+      document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     }
     if (fabricId === 'fabric4') {
       document.getElementById('popupMainImg4').src = 'Denim small heart shade2.jpeg';
       document.getElementById('shadeCanvas4').style.display = 'none';
       document.getElementById('popupMainImg4').style.display = 'block';
       document.querySelectorAll('#fabric4-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
-      document.querySelectorAll('#fabric4-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
+      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     }
   }
 
@@ -901,14 +901,25 @@
     canvas.style.display = 'none';
     mainImg.style.display = 'block';
     mainImg.src = src;
+    document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     if (el.classList.contains('popup-thumb')) {
       document.querySelectorAll('#fabric4-popup .popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
-      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+      const target = el.getAttribute('data-shade-target');
+      if (target) {
+        const chip = document.querySelector(`#fabric4-popup [data-shade-id="${target}"]`);
+        if (chip) chip.classList.add('active-shade');
+      }
     }
     if (el.classList.contains('shade-chip')) {
-      document.querySelectorAll('#fabric4-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
       el.classList.add('active-shade');
+      const shadeId = el.getAttribute('data-shade-id');
+      if (shadeId) {
+        document.querySelectorAll('#fabric4-popup .popup-thumb').forEach(t => {
+          t.classList.remove('active');
+          if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
+        });
+      }
     }
   }
 
@@ -954,14 +965,25 @@
     canvas.style.display = 'none';
     mainImg.style.display = 'block';
     mainImg.src = src;
+    document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     if (el.classList.contains('popup-thumb')) {
       document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
-      document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+      const target = el.getAttribute('data-shade-target');
+      if (target) {
+        const chip = document.querySelector(`#fabric3-popup [data-shade-id="${target}"]`);
+        if (chip) chip.classList.add('active-shade');
+      }
     }
     if (el.classList.contains('shade-chip')) {
-      document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
       el.classList.add('active-shade');
+      const shadeId = el.getAttribute('data-shade-id');
+      if (shadeId) {
+        document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => {
+          t.classList.remove('active');
+          if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
+        });
+      }
     }
   }
 
@@ -1003,14 +1025,25 @@
   function showNormal2(el, src) {
     const mainImg = document.getElementById('popupMainImg2');
     mainImg.src = src;
+    document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     if (el.classList.contains('popup-thumb')) {
       document.querySelectorAll('#fabric2-popup .popup-thumb').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
-      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+      const target = el.getAttribute('data-shade-target');
+      if (target) {
+        const chip = document.querySelector(`#fabric2-popup [data-shade-id="${target}"]`);
+        if (chip) chip.classList.add('active-shade');
+      }
     }
     if (el.classList.contains('shade-chip')) {
-      document.querySelectorAll('#fabric2-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
       el.classList.add('active-shade');
+      const shadeId = el.getAttribute('data-shade-id');
+      if (shadeId) {
+        document.querySelectorAll('#fabric2-popup .popup-thumb').forEach(t => {
+          t.classList.remove('active');
+          if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
+        });
+      }
     }
   }
 
@@ -1043,17 +1076,28 @@
   function showNormal(el, src) {
     const mainImg = document.getElementById('popupMainImg');
     const canvas = document.getElementById('shadeCanvas');
-    document.querySelectorAll('.popup-thumb').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
     canvas.style.display = 'none';
     mainImg.style.display = 'block';
     mainImg.src = src;
-    document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
+    document.querySelectorAll('#fabric1-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    if (el.classList.contains('popup-thumb')) {
+      document.querySelectorAll('#fabric1-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const target = el.getAttribute('data-shade-target');
+      if (target) {
+        const chip = document.querySelector(`#fabric1-popup [data-shade="${target}"]`);
+        if (chip) chip.classList.add('active-shade');
+      }
+    }
+    if (el.classList.contains('shade-chip')) {
+      el.classList.add('active-shade');
+    }
   }
 
   function changeImage(el, src) {
-    document.querySelectorAll('.shade-chip').forEach(t => t.classList.remove('active-shade'));
+    document.querySelectorAll('#fabric1-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     el.classList.add('active-shade');
+    document.querySelectorAll('#fabric1-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     const shade = el.getAttribute('data-shade');
     const pos = shadePositions[shade];
     const mainImg = document.getElementById('popupMainImg');

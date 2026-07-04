@@ -504,8 +504,16 @@
     .footer-links { display: flex; justify-content: center; gap: 20px; margin: 8px 0; flex-wrap: wrap; }
     .footer-links a { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
     .footer-links a:hover { color: var(--magenta-light); }
-    @media (max-width: 900px) {
-      nav { padding: 12px 20px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: white; padding: 20px; border-bottom: 1px solid var(--cream-dark); z-index: 99; flex-direction: column; gap: 16px; }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 600; color: var(--dark); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--cream); }
+    .mobile-menu a:hover { color: var(--magenta); }
+    @media (max-width: 600px) {
+      .nav-back { display: none; }
+      .hamburger { display: flex; }
+    }
       .page-hero { padding: 100px 20px 50px; }
       .breadcrumb { padding: 12px 20px; }
       .fabrics-section { padding: 60px 20px; }
@@ -525,7 +533,17 @@
     <span class="nav-brand-name">Deseos</span>
   </a>
   <a href="wholesale.html" class="nav-back">← Back To Wholesale</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="wholesale.html">← Back To Wholesale</a>
+  <a href="index.html#fabrics">All Fabrics</a>
+  <a href="mailto:enquiry@deseosfabrics.com">Email Us</a>
+  <a href="https://wa.me/917400031405">WhatsApp Us</a>
+</div>
 
 <!-- HERO -->
 <div class="page-hero">
@@ -757,19 +775,19 @@
         <canvas id="shadeCanvas3" style="display:none;width:100%;height:320px;border-radius:8px 8px 0 0;"></canvas>
         <img src="Denim heart shade.jpeg" alt="Heart Jacquard Denim Fabric" class="popup-main-image" id="popupMainImg3">
         <div class="popup-thumbs">
-          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal3(this, 'Denim heart shade.jpeg')">
-          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3(this, 'Denim heart C.jpeg')">
-          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="showNormal3(this, 'Denim heart B.jpeg')">
-          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3(this, 'Denim heart A.jpeg')">
+          <img src="Denim heart shade.jpeg" alt="All Shades" class="popup-thumb active" data-shade-target="" onclick="showNormal3v2(this, 'Denim heart shade.jpeg')">
+          <img src="Denim heart C.jpeg" alt="Regular Denim" class="popup-thumb" data-shade-target="A3" onclick="showNormal3v2(this, 'Denim heart C.jpeg')">
+          <img src="Denim heart B.jpeg" alt="Navy" class="popup-thumb" data-shade-target="B3" onclick="showNormal3v2(this, 'Denim heart B.jpeg')">
+          <img src="Denim heart A.jpeg" alt="Light Denim" class="popup-thumb" data-shade-target="C3" onclick="showNormal3v2(this, 'Denim heart A.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip" data-shade3="A" data-shade-id="A3" onclick="changeImage3(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
-          <span class="shade-chip" data-shade3="B" data-shade-id="B3" onclick="changeImage3(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
-          <span class="shade-chip" data-shade3="C" data-shade-id="C3" onclick="changeImage3(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
+          <span class="shade-chip" data-shade3="A" data-shade-id="A3" onclick="changeImage3v2(this, 'Denim heart C.jpeg')">💙 A — Regular Denim</span>
+          <span class="shade-chip" data-shade3="B" data-shade-id="B3" onclick="changeImage3v2(this, 'Denim heart B.jpeg')">🌑 B — Navy</span>
+          <span class="shade-chip" data-shade3="C" data-shade-id="C3" onclick="changeImage3v2(this, 'Denim heart A.jpeg')">🩵 C — Light Denim</span>
         </div>
       </div>
 
@@ -867,7 +885,9 @@
 </footer>
 
 <script>
-  function openPopup(fabricId) {
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+  }
     document.getElementById('popupOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
     document.getElementById('fabric1-popup').style.display = fabricId === 'fabric1' ? 'block' : 'none';
@@ -959,45 +979,43 @@
     sourceImg.src = 'Denim small heart shade2.jpeg';
   }
 
-  function showNormal3(el, src) {
+  function showNormal3v2(el, src) {
     const mainImg = document.getElementById('popupMainImg3');
     const canvas = document.getElementById('shadeCanvas3');
     canvas.style.display = 'none';
     mainImg.style.display = 'block';
     mainImg.src = src;
     document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
-    if (el.classList.contains('popup-thumb')) {
-      document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      const target = el.getAttribute('data-shade-target');
-      console.log('Thumbnail clicked, target:', target);
-      if (target) {
-        const chip = document.querySelector(`#fabric3-popup [data-shade-id="${target}"]`);
-        console.log('Found chip:', chip);
-        if (chip) chip.classList.add('active-shade');
-      }
-    }
-    if (el.classList.contains('shade-chip')) {
-      el.classList.add('active-shade');
-      const shadeId = el.getAttribute('data-shade-id');
-      if (shadeId) {
-        document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => {
-          t.classList.remove('active');
-          if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
-        });
-      }
+    document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    // Hardcoded image to chip mapping
+    const imgToChip = {
+      'Denim heart C.jpeg': 0,  // A — Regular Denim
+      'Denim heart B.jpeg': 1,  // B — Navy
+      'Denim heart A.jpeg': 2   // C — Light Denim
+    };
+    const chips = document.querySelectorAll('#fabric3-popup .shade-chip');
+    const filename = src.split('/').pop();
+    if (imgToChip[filename] !== undefined) {
+      chips[imgToChip[filename]].classList.add('active-shade');
     }
   }
 
-  function changeImage3(el, src) {
+  function changeImage3v2(el, src) {
     document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     el.classList.add('active-shade');
-    // Sync thumbnail
-    const shadeId = el.getAttribute('data-shade-id');
-    document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => {
-      t.classList.remove('active');
-      if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
-    });
+    // Hardcoded chip to thumbnail mapping
+    const chipToThumb = {
+      'Denim heart C.jpeg': 1,  // A chip → Regular Denim thumb (index 1)
+      'Denim heart B.jpeg': 2,  // B chip → Navy thumb (index 2)
+      'Denim heart A.jpeg': 3   // C chip → Light Denim thumb (index 3)
+    };
+    const thumbs = document.querySelectorAll('#fabric3-popup .popup-thumb');
+    thumbs.forEach(t => t.classList.remove('active'));
+    const filename = src.split('/').pop();
+    if (chipToThumb[filename] !== undefined) {
+      thumbs[chipToThumb[filename]].classList.add('active');
+    }
     const shade = el.getAttribute('data-shade3');
     const canvas = document.getElementById('shadeCanvas3');
     const mainImg = document.getElementById('popupMainImg3');

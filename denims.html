@@ -990,6 +990,12 @@
   function changeImage3(el, src) {
     document.querySelectorAll('#fabric3-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
     el.classList.add('active-shade');
+    // Sync thumbnail
+    const shadeId = el.getAttribute('data-shade-id');
+    document.querySelectorAll('#fabric3-popup .popup-thumb').forEach(t => {
+      t.classList.remove('active');
+      if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
+    });
     const shade = el.getAttribute('data-shade3');
     const canvas = document.getElementById('shadeCanvas3');
     const mainImg = document.getElementById('popupMainImg3');

@@ -942,9 +942,9 @@
       ctx.drawImage(sourceImg, 0, 0, W, H);
       ctx.filter = 'none';
       // C=left A=centre B=right
-      const positions = { 'A': 0.345, 'B': 0.66, 'C': 0.01 };
+      const positions = { 'A': 0.345, 'B': 0.68, 'C': 0.01 };
       const sx = Math.floor(positions[shade] * W);
-      const sw = Math.floor(0.32 * W);
+      const sw = Math.floor(0.30 * W);
       ctx.clearRect(sx, 0, sw, H);
       ctx.drawImage(sourceImg, sx, 0, sw, H, sx, 0, sw, H);
       ctx.strokeStyle = '#e0187a';

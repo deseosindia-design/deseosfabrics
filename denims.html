@@ -1065,8 +1065,9 @@
       const img6 = document.getElementById("popupMainImg6");
       img6.src = "Denim 45699 shade.jpeg";
       img6.style.transform = "";
-      img6.style.objectFit = "cover";
+      img6.style.objectFit = "contain";
       img6.style.height = "260px";
+      img6.style.background = "var(--cream)";
       document.querySelectorAll("#fabric6-popup .popup-thumb").forEach((t,i) => t.classList.toggle("active", i===0));
       document.querySelectorAll(".shade-chip-f6").forEach(t => t.classList.remove("active-shade"));
     }
@@ -1102,8 +1103,14 @@
     if (el.classList.contains("shade-chip") && chipToThumb[src] !== undefined) {
       thumbs[chipToThumb[src]].classList.add("active");
     }
-    // Rotate shade card image
-
+    // Show shade card fully, individual shades cropped
+    if (src === "Denim 45699 shade.jpeg") {
+      mainImg.style.objectFit = "contain";
+      mainImg.style.background = "var(--cream)";
+    } else {
+      mainImg.style.objectFit = "cover";
+      mainImg.style.background = "";
+    }
   }
 
 
@@ -1422,4 +1429,3 @@
 
 </body>
 </html>
- 

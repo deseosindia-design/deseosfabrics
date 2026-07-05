@@ -106,9 +106,9 @@
 
     .popup-gallery { width: 100%; position: relative; }
     .popup-main-image { width: 100%; height: 260px; object-fit: cover; object-position: center; background: var(--cream); border-radius: 8px 8px 0 0; display: block; }
-    .popup-thumbs { display: flex; gap: 8px; padding: 10px 16px; background: var(--cream); }
-    .popup-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 2px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
-    .popup-thumb.active { border-color: var(--magenta); }
+    .popup-thumbs { display: flex; gap: 12px; padding: 14px 16px; background: var(--cream); flex-wrap: wrap; }
+    .popup-thumb { width: 92px; height: 92px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; }
+    .popup-thumb.active { border-color: var(--magenta); transform: scale(1.03); }
     .popup-thumb:hover { border-color: var(--royal); }
 
     .popup-body { padding: 28px; }
@@ -228,7 +228,7 @@
         <img src="Sequin shade.jpeg" alt="Dense Paillette Fabric" class="popup-main-image" id="sq1MainImg">
         <div class="popup-thumbs">
           <img src="Sequin shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="sq1thumb(this, 'Sequin shade.jpeg')">
-          <img src="Sequin shade1.jpeg" alt="Shade Range" class="popup-thumb" onclick="sq1thumb(this, 'Sequin shade1.jpeg')">
+          <img src="Sequin shade 1.jpeg" alt="Shade Range" class="popup-thumb" onclick="sq1thumb(this, 'Sequin shade 1.jpeg')">
           <img src="Sequin white.jpeg" alt="White/Ivory" class="popup-thumb" onclick="sq1thumb(this, 'Sequin white.jpeg')">
           <img src="Sequin peach.jpeg" alt="Peach/Champagne" class="popup-thumb" onclick="sq1thumb(this, 'Sequin peach.jpeg')">
           <img src="Sequin grey.jpeg" alt="Grey/Silver" class="popup-thumb" onclick="sq1thumb(this, 'Sequin grey.jpeg')">

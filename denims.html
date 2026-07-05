@@ -958,23 +958,26 @@
         <img src="Denim 45699 shade.jpeg" alt="Snow Distressed Denim" class="popup-main-image" id="popupMainImg6">
         <div class="popup-thumbs">
           <img src="Denim 45699 shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="f6thumb(this, 'Denim 45699 shade.jpeg')">
-          <img src="Denim 45699 1.jpeg" alt="Shade 1" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 1.jpeg')">
-          <img src="Denim 45699 2.jpeg" alt="Shade 2" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 2.jpeg')">
-          <img src="Denim 45699 3.jpeg" alt="Shade 3" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 3.jpeg')">
-          <img src="Denim 45699 4.jpeg" alt="Shade 4" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 4.jpeg')">
+          <img src="Denim 45699 black.jpeg" alt="Black" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 black.jpeg')">
+          <img src="Denim 45699 darknavy.jpeg" alt="Dark Navy" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 darknavy.jpeg')">
+          <img src="Denim 45699 navy.jpeg" alt="Navy" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 navy.jpeg')">
+          <img src="Denim 45699 medblue.jpeg" alt="Medium Blue" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 medblue.jpeg')">
+          <img src="Denim 45699 blue.jpeg" alt="Blue" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 blue.jpeg')">
+          <img src="Denim 45699 lightblue.jpeg" alt="Light Blue" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 lightblue.jpeg')">
+          <img src="Denim 45699 lightest.jpeg" alt="Lightest Blue" class="popup-thumb" onclick="f6thumb(this, 'Denim 45699 lightest.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 1.jpeg')">⚫ Black</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 2.jpeg')">🌑 Dark Navy</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 3.jpeg')">🔵 Navy</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 4.jpeg')">💙 Medium Blue</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 5.jpeg')">🩵 Blue</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 6.jpeg')">🩵 Light Blue</span>
-          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 7.jpeg')">🩵 Lightest Blue</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 black.jpeg')">⚫ Black</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 darknavy.jpeg')">🌑 Dark Navy</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 navy.jpeg')">🔵 Navy</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 medblue.jpeg')">💙 Medium Blue</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 blue.jpeg')">🩵 Blue</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 lightblue.jpeg')">🩵 Light Blue</span>
+          <span class="shade-chip shade-chip-f6" onclick="f6thumb(this, 'Denim 45699 lightest.jpeg')">🩵 Lightest Blue</span>
         </div>
       </div>
 
@@ -1072,13 +1075,13 @@
     if (el.classList.contains("popup-thumb")) el.classList.add("active");
     document.querySelectorAll(".shade-chip-f6").forEach(t => t.classList.remove("active-shade"));
     const imgToChip = {
-      "Denim 45699 1.jpeg": 0,
-      "Denim 45699 2.jpeg": 1,
-      "Denim 45699 3.jpeg": 2,
-      "Denim 45699 4.jpeg": 3,
-      "Denim 45699 5.jpeg": 4,
-      "Denim 45699 6.jpeg": 5,
-      "Denim 45699 7.jpeg": 6
+      "Denim 45699 black.jpeg": 0,
+      "Denim 45699 darknavy.jpeg": 1,
+      "Denim 45699 navy.jpeg": 2,
+      "Denim 45699 medblue.jpeg": 3,
+      "Denim 45699 blue.jpeg": 4,
+      "Denim 45699 lightblue.jpeg": 5,
+      "Denim 45699 lightest.jpeg": 6
     };
     const chips = document.querySelectorAll(".shade-chip-f6");
     if (imgToChip[src] !== undefined) chips[imgToChip[src]].classList.add("active-shade");

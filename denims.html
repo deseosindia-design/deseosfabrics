@@ -1062,7 +1062,10 @@
       document.querySelectorAll(".shade-chip-f5").forEach(t => t.classList.remove("active-shade"));
     }
     if (fabricId === "fabric6") {
-      document.getElementById("popupMainImg6").src = "Denim 45699 shade.jpeg";
+      const img6 = document.getElementById("popupMainImg6");
+      img6.src = "Denim 45699 shade.jpeg";
+      img6.style.transform = "rotate(90deg) scale(1.4)";
+      img6.style.objectFit = "contain";
       document.querySelectorAll("#fabric6-popup .popup-thumb").forEach((t,i) => t.classList.toggle("active", i===0));
       document.querySelectorAll(".shade-chip-f6").forEach(t => t.classList.remove("active-shade"));
     }
@@ -1097,6 +1100,14 @@
     if (imgToChip[src] !== undefined) chips[imgToChip[src]].classList.add("active-shade");
     if (el.classList.contains("shade-chip") && chipToThumb[src] !== undefined) {
       thumbs[chipToThumb[src]].classList.add("active");
+    }
+    // Rotate shade card image
+    if (src === "Denim 45699 shade.jpeg") {
+      mainImg.style.transform = "rotate(90deg) scale(1.4)";
+      mainImg.style.objectFit = "contain";
+    } else {
+      mainImg.style.transform = "";
+      mainImg.style.objectFit = "cover";
     }
   }
 

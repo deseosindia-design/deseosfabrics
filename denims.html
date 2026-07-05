@@ -678,6 +678,24 @@
       </div>
     </div>
 
+    <!-- FABRIC 7 — Textured Denim -->
+    <div class="fabric-card" onclick="openPopup('fabric7')">
+      <img src="Denim 45715 shade.jpeg" alt="Textured Denim Fabric — 3 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fabric-card-image-placeholder" style="display:none;">🧵</div>
+      <div class="fabric-card-body">
+        <div class="fabric-card-code">DFDE05072026-2</div>
+        <div class="fabric-card-name">Textured Denim</div>
+        <div class="fabric-card-desc">Imported denim with distinctive raised wavy crinkle weave texture. Available in 3 shades. MOQ 50 metres.</div>
+        <div class="fabric-card-specs">
+          <span class="spec-tag">67" Width</span>
+          <span class="spec-tag">3 Shades</span>
+          <span class="spec-tag">80% Cotton</span>
+          <span class="spec-tag">Imported</span>
+        </div>
+        <button class="fabric-card-btn">View Details & Enquire →</button>
+      </div>
+    </div>
+
   </div>
 
 <!-- POPUP -->
@@ -1008,6 +1026,54 @@
       </div>
     </div>
 
+    <!-- FABRIC 7 POPUP -->
+    <div id="fabric7-popup" style="display:none;">
+      <div class="popup-gallery">
+        <img src="Denim 45715 shade.jpeg" alt="Textured Denim" class="popup-main-image" id="popupMainImg7" style="object-fit:contain;background:var(--cream);">
+        <div class="popup-thumbs">
+          <img src="Denim 45715 shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="f7thumb(this, 'Denim 45715 shade.jpeg')">
+          <img src="Denim 45715 blue.jpeg" alt="Blue" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 blue.jpeg')">
+          <img src="Denim 45715 indigo.jpeg" alt="Indigo" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 indigo.jpeg')">
+          <img src="Denim 45715 black.jpeg" alt="Black" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 black.jpeg')">
+        </div>
+      </div>
+
+      <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
+        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
+        <div class="shades-list">
+          <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 blue.jpeg')">🔵 Blue</span>
+          <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 indigo.jpeg')">🌑 Indigo</span>
+          <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 black.jpeg')">⚫ Black</span>
+        </div>
+      </div>
+
+      <div class="popup-body">
+        <div class="popup-code">DFDE05072026-2 · Wholesale Only</div>
+        <div class="popup-name">Textured Denim Fabric</div>
+        <div class="popup-desc">Premium imported denim with a distinctive raised wavy crinkle weave texture that adds depth and dimension to every silhouette. Available wholesale with a minimum order of 50 metres.</div>
+
+        <div class="popup-details">
+          <h4>Fabric Specifications</h4>
+          <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">Composition</div><div class="detail-value">80% Cotton, 20% Polyester</div></div>
+            <div class="detail-item"><div class="detail-label">Width</div><div class="detail-value">67" Approx</div></div>
+            <div class="detail-item"><div class="detail-label">Texture</div><div class="detail-value">Raised Wavy Crinkle Weave</div></div>
+            <div class="detail-item"><div class="detail-label">Origin</div><div class="detail-value">Imported</div></div>
+            <div class="detail-item"><div class="detail-label">Roll Size</div><div class="detail-value">100 Yards / Roll</div></div>
+            <div class="detail-item"><div class="detail-label">Best For</div><div class="detail-value">Western Wear, Casual, Denim Labels</div></div>
+          </div>
+        </div>
+
+        <div class="popup-enquiry">
+          <h4>Enquire About This Fabric</h4>
+          <div class="enquiry-buttons">
+            <a href="https://wa.me/917400031405?text=Hi%20Deseos%20Fabrics%2C%20I%20am%20interested%20in%20the%20Textured%20Denim%20Fabric%20(DFDE05072026-2).%20Please%20share%20wholesale%20pricing%20and%20availability.%20Reference%3A%20deseosfabrics.com%2Fdenims.html" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="mailto:enquiry@deseosfabrics.com?subject=Wholesale%20Enquiry%20%E2%80%94%20Textured%20Denim%20(DFDE05072026-2)&body=Hi%20Deseos%20Fabrics%2C%0A%0AFabric%3A%20Textured%20Denim%0ACode%3A%20DFDE05072026-2%0A%0AShade%20Required%3A%0AQuantity%3A%0ALocation%3A" class="btn-email" target="_blank">📧 Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1032,7 +1098,7 @@
   function openPopup(fabricId) {
     document.getElementById("popupOverlay").classList.add("active");
     document.body.style.overflow = "hidden";
-    ["fabric1","fabric2","fabric3","fabric4","fabric5","fabric6"].forEach(id => {
+    ["fabric1","fabric2","fabric3","fabric4","fabric5","fabric6","fabric7"].forEach(id => {
       document.getElementById(id+"-popup").style.display = fabricId === id ? "block" : "none";
     });
     if (fabricId === "fabric2") {
@@ -1069,6 +1135,37 @@
       img6.style.height = "320px";
       img6.style.background = "var(--cream)";      document.querySelectorAll("#fabric6-popup .popup-thumb").forEach((t,i) => t.classList.toggle("active", i===0));
       document.querySelectorAll(".shade-chip-f6").forEach(t => t.classList.remove("active-shade"));
+    }
+    if (fabricId === "fabric7") {
+      document.getElementById("popupMainImg7").src = "Denim 45715 shade.jpeg";
+      document.querySelectorAll("#fabric7-popup .popup-thumb").forEach((t,i) => t.classList.toggle("active", i===0));
+      document.querySelectorAll(".shade-chip-f7").forEach(t => t.classList.remove("active-shade"));
+    }
+  }
+
+  function f7thumb(el, src) {
+    const mainImg = document.getElementById("popupMainImg7");
+    mainImg.src = src;
+    mainImg.style.objectFit = src === "Denim 45715 shade.jpeg" ? "contain" : "cover";
+    mainImg.style.background = src === "Denim 45715 shade.jpeg" ? "var(--cream)" : "";
+    document.querySelectorAll("#fabric7-popup .popup-thumb").forEach(t => t.classList.remove("active"));
+    if (el.classList.contains("popup-thumb")) el.classList.add("active");
+    document.querySelectorAll(".shade-chip-f7").forEach(t => t.classList.remove("active-shade"));
+    const imgToChip = {
+      "Denim 45715 blue.jpeg": 0,
+      "Denim 45715 indigo.jpeg": 1,
+      "Denim 45715 black.jpeg": 2
+    };
+    const chipToThumb = {
+      "Denim 45715 blue.jpeg": 1,
+      "Denim 45715 indigo.jpeg": 2,
+      "Denim 45715 black.jpeg": 3
+    };
+    const chips = document.querySelectorAll(".shade-chip-f7");
+    const thumbs = document.querySelectorAll("#fabric7-popup .popup-thumb");
+    if (imgToChip[src] !== undefined) chips[imgToChip[src]].classList.add("active-shade");
+    if (el.classList.contains("shade-chip") && chipToThumb[src] !== undefined) {
+      thumbs[chipToThumb[src]].classList.add("active");
     }
   }
 

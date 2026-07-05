@@ -1032,7 +1032,7 @@
         <img src="Denim 45715 shade.jpeg" alt="Textured Denim" class="popup-main-image" id="popupMainImg7" style="object-fit:contain;background:var(--cream);">
         <div class="popup-thumbs">
           <img src="Denim 45715 shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="f7thumb(this, 'Denim 45715 shade.jpeg')">
-          <img src="Denim 45715 blue.jpeg" alt="Blue" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 blue.jpeg')">
+          <img src="Denim 45715 Blue.jpeg" alt="Blue" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 Blue.jpeg')">
           <img src="Denim 45715 indigo.jpeg" alt="Indigo" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 indigo.jpeg')">
           <img src="Denim 45715 black.jpeg" alt="Black" class="popup-thumb" onclick="f7thumb(this, 'Denim 45715 black.jpeg')">
         </div>
@@ -1041,7 +1041,7 @@
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
         <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
         <div class="shades-list">
-          <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 blue.jpeg')">🔵 Blue</span>
+          <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 Blue.jpeg')">🔵 Blue</span>
           <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 indigo.jpeg')">🌑 Indigo</span>
           <span class="shade-chip shade-chip-f7" onclick="f7thumb(this, 'Denim 45715 black.jpeg')">⚫ Black</span>
         </div>
@@ -1146,18 +1146,18 @@
   function f7thumb(el, src) {
     const mainImg = document.getElementById("popupMainImg7");
     mainImg.src = src;
-    mainImg.style.objectFit = src === "Denim 45715 shade.jpeg" ? "contain" : "cover";
-    mainImg.style.background = src === "Denim 45715 shade.jpeg" ? "var(--cream)" : "";
+    mainImg.style.objectFit = "contain";
+    mainImg.style.background = "var(--cream)";
     document.querySelectorAll("#fabric7-popup .popup-thumb").forEach(t => t.classList.remove("active"));
     if (el.classList.contains("popup-thumb")) el.classList.add("active");
     document.querySelectorAll(".shade-chip-f7").forEach(t => t.classList.remove("active-shade"));
     const imgToChip = {
-      "Denim 45715 blue.jpeg": 0,
+      "Denim 45715 Blue.jpeg": 0,
       "Denim 45715 indigo.jpeg": 1,
       "Denim 45715 black.jpeg": 2
     };
     const chipToThumb = {
-      "Denim 45715 blue.jpeg": 1,
+      "Denim 45715 Blue.jpeg": 1,
       "Denim 45715 indigo.jpeg": 2,
       "Denim 45715 black.jpeg": 3
     };

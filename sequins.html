@@ -106,9 +106,9 @@
 
     .popup-gallery { width: 100%; position: relative; }
     .popup-main-image { width: 100%; height: 260px; object-fit: cover; object-position: center; background: var(--cream); border-radius: 8px 8px 0 0; display: block; }
-    .popup-thumbs { display: flex; gap: 12px; padding: 14px 16px; background: var(--cream); flex-wrap: wrap; }
-    .popup-thumb { width: 92px; height: 92px; object-fit: cover; border-radius: 4px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; }
-    .popup-thumb.active { border-color: var(--magenta); transform: scale(1.03); }
+    .popup-thumbs { display: flex; gap: 8px; padding: 10px 16px; background: var(--cream); }
+    .popup-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 2px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
+    .popup-thumb.active { border-color: var(--magenta); }
     .popup-thumb:hover { border-color: var(--royal); }
 
     .popup-body { padding: 28px; }
@@ -206,9 +206,27 @@
         <div class="fabric-card-name">Dense Paillette Fabric</div>
         <div class="fabric-card-desc">Premium imported all-over dense disc paillette sequin fabric. Available in 17+ shades. MOQ 50 metres.</div>
         <div class="fabric-card-specs">
-          <span class="spec-tag">560 GSM Approx</span>
+          <span class="spec-tag">~560 GSM</span>
           <span class="spec-tag">49" Width</span>
           <span class="spec-tag">17+ Shades</span>
+          <span class="spec-tag">Imported</span>
+        </div>
+        <button class="fabric-card-btn">View Details & Enquire →</button>
+      </div>
+    </div>
+
+    <!-- FABRIC 2 — Mosaic Stretch Sequin -->
+    <div class="fabric-card" onclick="openPopup('sq2')">
+      <img src="Sequence shadecard.jpeg" alt="Mosaic Stretch Sequin Fabric — 15 Shades — Deseos Fabrics" class="fabric-card-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fabric-card-image-placeholder" style="display:none;">✨</div>
+      <div class="fabric-card-body">
+        <div class="fabric-card-code">DFSQ05072026-2</div>
+        <div class="fabric-card-name">Mosaic Stretch Sequin Fabric</div>
+        <div class="fabric-card-desc">Imported stretch sequin fabric with mixed square and disc paillettes. Available in 15 shades. MOQ 50 metres.</div>
+        <div class="fabric-card-specs">
+          <span class="spec-tag">52"+ Width</span>
+          <span class="spec-tag">15 Shades</span>
+          <span class="spec-tag">Stretchable</span>
           <span class="spec-tag">Imported</span>
         </div>
         <button class="fabric-card-btn">View Details & Enquire →</button>
@@ -228,7 +246,7 @@
         <img src="Sequin shade.jpeg" alt="Dense Paillette Fabric" class="popup-main-image" id="sq1MainImg">
         <div class="popup-thumbs">
           <img src="Sequin shade.jpeg" alt="All Shades" class="popup-thumb active" onclick="sq1thumb(this, 'Sequin shade.jpeg')">
-          <img src="Sequin shade 1.jpeg" alt="Shade Range" class="popup-thumb" onclick="sq1thumb(this, 'Sequin shade 1.jpeg')">
+          <img src="Sequin shade1.jpeg" alt="Shade Range" class="popup-thumb" onclick="sq1thumb(this, 'Sequin shade1.jpeg')">
           <img src="Sequin white.jpeg" alt="White/Ivory" class="popup-thumb" onclick="sq1thumb(this, 'Sequin white.jpeg')">
           <img src="Sequin peach.jpeg" alt="Peach/Champagne" class="popup-thumb" onclick="sq1thumb(this, 'Sequin peach.jpeg')">
           <img src="Sequin grey.jpeg" alt="Grey/Silver" class="popup-thumb" onclick="sq1thumb(this, 'Sequin grey.jpeg')">
@@ -254,7 +272,7 @@
             </div>
             <div class="detail-item">
               <div class="detail-label">GSM</div>
-              <div class="detail-value">560 GSM Approx</div>
+              <div class="detail-value">~560 GSM</div>
             </div>
             <div class="detail-item">
               <div class="detail-label">Sequin Type</div>
@@ -289,6 +307,48 @@
       </div>
     </div>
 
+    <!-- SQ2 POPUP -->
+    <div id="sq2-popup" style="display:none;">
+      <div class="popup-gallery">
+        <img src="Sequence shadecard.jpeg" alt="Mosaic Stretch Sequin Fabric" class="popup-main-image" id="sq2MainImg">
+        <div class="popup-thumbs">
+          <img src="Sequence shadecard.jpeg" alt="Shade Card" class="popup-thumb active" onclick="sq2thumb(this, 'Sequence shadecard.jpeg')">
+          <img src="Sequin stretch 1.jpeg" alt="Texture 1" class="popup-thumb" onclick="sq2thumb(this, 'Sequin stretch 1.jpeg')">
+          <img src="Sequin stretch 2.jpeg" alt="Texture 2" class="popup-thumb" onclick="sq2thumb(this, 'Sequin stretch 2.jpeg')">
+          <img src="Sequin stretch 3.jpeg" alt="Texture 3" class="popup-thumb" onclick="sq2thumb(this, 'Sequin stretch 3.jpeg')">
+          <img src="Sequin stretch 4.jpeg" alt="Texture 4" class="popup-thumb" onclick="sq2thumb(this, 'Sequin stretch 4.jpeg')">
+        </div>
+      </div>
+      <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
+        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">15 Shades Available</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--mid);">WhatsApp us to see the complete shade card and choose your colour.</p>
+      </div>
+      <div class="popup-body">
+        <div class="popup-code">DFSQ05072026-2 · Wholesale Only</div>
+        <div class="popup-name">Mosaic Stretch Sequin Fabric</div>
+        <div class="popup-desc">Premium imported stretch sequin fabric with a unique combination of square sequins and mixed-size disc paillettes in the same tone — creating a rich mosaic texture that stretches for the perfect fit. Available wholesale with a minimum order of 50 metres.</div>
+        <div class="popup-details">
+          <h4>Fabric Specifications</h4>
+          <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">Width</div><div class="detail-value">52"+ inches</div></div>
+            <div class="detail-item"><div class="detail-label">Sequin Type</div><div class="detail-value">Mixed Square + Disc Paillette</div></div>
+            <div class="detail-item"><div class="detail-label">Stretch</div><div class="detail-value">Stretchable</div></div>
+            <div class="detail-item"><div class="detail-label">Origin</div><div class="detail-value">Imported</div></div>
+            <div class="detail-item"><div class="detail-label">Coverage</div><div class="detail-value">All Over Mosaic</div></div>
+            <div class="detail-item"><div class="detail-label">Best For</div><div class="detail-value">Bridal, Festive, Evening, Dance</div></div>
+          </div>
+        </div>
+        <div class="shades-note">✨ Available in 15 shades — WhatsApp us to receive the complete shade card</div>
+        <div class="popup-enquiry">
+          <h4>Enquire About This Fabric</h4>
+          <div class="enquiry-buttons">
+            <a href="https://wa.me/917400031405?text=Hi%20Deseos%20Fabrics%2C%20I%20am%20interested%20in%20the%20Mosaic%20Stretch%20Sequin%20Fabric%20(DFSQ05072026-2).%20Please%20share%20wholesale%20pricing%2C%20shade%20card%20and%20availability." class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="mailto:enquiry@deseosfabrics.com?subject=Wholesale%20Enquiry%20%E2%80%94%20Mosaic%20Stretch%20Sequin%20(DFSQ05072026-2)&body=Hi%20Deseos%20Fabrics%2C%0A%0AFabric%3A%20Mosaic%20Stretch%20Sequin%0ACode%3A%20DFSQ05072026-2%0A%0AShade%20Required%3A%0AQuantity%3A%0ALocation%3A" class="btn-email" target="_blank">📧 Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -314,9 +374,14 @@
     document.getElementById('popupOverlay').classList.add('active');
     document.body.style.overflow = 'hidden';
     document.getElementById('sq1-popup').style.display = id === 'sq1' ? 'block' : 'none';
+    document.getElementById('sq2-popup').style.display = id === 'sq2' ? 'block' : 'none';
     if (id === 'sq1') {
       document.getElementById('sq1MainImg').src = 'Sequin shade.jpeg';
       document.querySelectorAll('#sq1-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
+    }
+    if (id === 'sq2') {
+      document.getElementById('sq2MainImg').src = 'Sequence shadecard.jpeg';
+      document.querySelectorAll('#sq2-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
     }
   }
 
@@ -336,6 +401,12 @@
   function sq1thumb(el, src) {
     document.getElementById('sq1MainImg').src = src;
     document.querySelectorAll('#sq1-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function sq2thumb(el, src) {
+    document.getElementById('sq2MainImg').src = src;
+    document.querySelectorAll('#sq2-popup .popup-thumb').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
   }
 </script>

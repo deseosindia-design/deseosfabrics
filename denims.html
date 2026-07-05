@@ -1066,8 +1066,9 @@
       img6.src = "Denim 45699 shade.jpeg";
       img6.style.transform = "rotate(90deg) scale(1.4)";
       img6.style.objectFit = "contain";
-      img6.style.height = "180px";
-      img6.parentElement.style.overflow = "hidden";
+      img6.style.height = "150px";
+      img6.style.marginTop = "-40px";
+      img6.style.marginBottom = "-40px";
       document.querySelectorAll("#fabric6-popup .popup-thumb").forEach((t,i) => t.classList.toggle("active", i===0));
       document.querySelectorAll(".shade-chip-f6").forEach(t => t.classList.remove("active-shade"));
     }
@@ -1107,13 +1108,15 @@
     if (src === "Denim 45699 shade.jpeg") {
       mainImg.style.transform = "rotate(90deg) scale(1.4)";
       mainImg.style.objectFit = "contain";
-      mainImg.style.height = "180px";
-      mainImg.parentElement.style.overflow = "hidden";
+      mainImg.style.height = "150px";
+      mainImg.style.marginTop = "-40px";
+      mainImg.style.marginBottom = "-40px";
     } else {
       mainImg.style.transform = "";
       mainImg.style.objectFit = "cover";
       mainImg.style.height = "260px";
-      mainImg.parentElement.style.overflow = "visible";
+      mainImg.style.marginTop = "0";
+      mainImg.style.marginBottom = "0";
     }
   }
 

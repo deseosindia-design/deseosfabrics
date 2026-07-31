@@ -110,6 +110,21 @@
     .popup-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 2px; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
     .popup-thumb.active { border-color: var(--magenta); }
     .popup-thumb:hover { border-color: var(--royal); }
+    .shades-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .shade-chip {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 2px;
+      border: 1px solid var(--cream-dark);
+      color: var(--dark);
+      background: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .shade-chip:hover { border-color: var(--royal); color: var(--royal); }
+    .shade-chip.active-shade { border-color: var(--magenta); color: var(--magenta); background: var(--magenta-pale); }
 
     .popup-body { padding: 28px; }
     .popup-code { font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--magenta); margin-bottom: 8px; }
@@ -228,13 +243,17 @@
       <div class="popup-gallery">
         <img src="Olive Sage.jpeg" alt="Imported Cutwork — Olive Sage" class="popup-main-image" id="lc1MainImg">
         <div class="popup-thumbs">
-          <img src="Olive Sage.jpeg" alt="Olive Sage" class="popup-thumb active" onclick="lc1thumb(this, 'Olive Sage.jpeg')">
-          <img src="Cutwork Shades.jpeg" alt="Both Shades — Olive Sage & Fuchsia Pink" class="popup-thumb" onclick="lc1thumb(this, 'Cutwork Shades.jpeg')">
+          <img src="Olive Sage.jpeg" alt="Olive Sage" class="popup-thumb active" data-shade-target="lc1A" onclick="lc1thumb(this, 'Olive Sage.jpeg')">
+          <img src="Cutwork Shades.jpeg" alt="Both Shades — Olive Sage & Fuchsia Pink" class="popup-thumb" data-shade-target="lc1B" onclick="lc1thumb(this, 'Cutwork Shades.jpeg')">
         </div>
       </div>
 
       <div style="padding: 16px 24px; background: var(--cream); border-bottom: 1px solid var(--cream-dark);">
-        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">2 Shades Available</div>
+        <div style="font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:10px;">Available Shades — Click To View</div>
+        <div class="shades-list">
+          <span class="shade-chip" data-shade-id="lc1A" onclick="lc1thumb(this, 'Olive Sage.jpeg')">🌿 Olive Sage</span>
+          <span class="shade-chip" data-shade-id="lc1B" onclick="lc1thumb(this, 'Cutwork Shades.jpeg')">🌸 Fuchsia Pink</span>
+        </div>
       </div>
 
       <div class="popup-body">
@@ -314,6 +333,7 @@
     if (id === 'lc1') {
       document.getElementById('lc1MainImg').src = 'Olive Sage.jpeg';
       document.querySelectorAll('#lc1-popup .popup-thumb').forEach((t,i) => t.classList.toggle('active', i===0));
+      document.querySelectorAll('#lc1-popup .shade-chip').forEach((t,i) => t.classList.toggle('active-shade', i===0));
     }
   }
 
@@ -332,8 +352,26 @@
 
   function lc1thumb(el, src) {
     document.getElementById('lc1MainImg').src = src;
-    document.querySelectorAll('#lc1-popup .popup-thumb').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
+    document.querySelectorAll('#lc1-popup .shade-chip').forEach(t => t.classList.remove('active-shade'));
+    if (el.classList.contains('popup-thumb')) {
+      document.querySelectorAll('#lc1-popup .popup-thumb').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const target = el.getAttribute('data-shade-target');
+      if (target) {
+        const chip = document.querySelector(`#lc1-popup [data-shade-id="${target}"]`);
+        if (chip) chip.classList.add('active-shade');
+      }
+    }
+    if (el.classList.contains('shade-chip')) {
+      el.classList.add('active-shade');
+      const shadeId = el.getAttribute('data-shade-id');
+      if (shadeId) {
+        document.querySelectorAll('#lc1-popup .popup-thumb').forEach(t => {
+          t.classList.remove('active');
+          if (t.getAttribute('data-shade-target') === shadeId) t.classList.add('active');
+        });
+      }
+    }
   }
 </script>
 
